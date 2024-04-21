@@ -1,0 +1,15 @@
+{
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "always",
+		"source.organizeImports": "explicit"
+	},
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[javascript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"css.styleSheets": ["node_modules/bootstrap/dist/css/bootstrap.css"],
+	"i18n-ally.localesPaths": ["src/locales"],
+	"i18n-ally.sourceLanguage": "en",
+	"i18n-ally.enabledParsers": ["js"]
+}

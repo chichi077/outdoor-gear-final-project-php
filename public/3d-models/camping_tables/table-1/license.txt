@@ -1,0 +1,11 @@
+Model Information:
+* title:	Exterior Table Abrela
+* source:	https://sketchfab.com/3d-models/exterior-table-abrela-4288fde50a3b4e76a7bad37c83039612
+* author:	octoyisus (https://sketchfab.com/pelayofigaredo)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Exterior Table Abrela" (https://sketchfab.com/3d-models/exterior-table-abrela-4288fde50a3b4e76a7bad37c83039612) by octoyisus (https://sketchfab.com/pelayofigaredo) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

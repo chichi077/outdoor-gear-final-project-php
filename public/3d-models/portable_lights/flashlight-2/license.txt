@@ -1,0 +1,11 @@
+Model Information:
+* title:	Worn Silver Flashlight
+* source:	https://sketchfab.com/3d-models/worn-silver-flashlight-56be3c6c376a4a11a48e7ca6d0151c92
+* author:	Zack Kenin (https://sketchfab.com/zcore101)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Worn Silver Flashlight" (https://sketchfab.com/3d-models/worn-silver-flashlight-56be3c6c376a4a11a48e7ca6d0151c92) by Zack Kenin (https://sketchfab.com/zcore101) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

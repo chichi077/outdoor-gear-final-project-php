@@ -1,0 +1,80 @@
+/* General page styles */
+.App {
+	font-family: 'Arial', sans-serif;
+	color: #333;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #fff;
+}
+
+/* Styling the login container */
+.login-container {
+	background: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	display: flex;
+	justify-content: space-between;
+}
+
+/* Styling the individual sections */
+.login-section,
+.signup-section {
+	margin: 0 10px;
+}
+
+/* Login & Sign up titles */
+.login-section h1,
+.signup-section h1 {
+	font-size: 1.5em;
+	color: #333;
+}
+
+/* Styling the form inputs */
+input[type='email'],
+input[type='password'] {
+	width: 100%;
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	box-sizing: border-box; /* Makes sure padding doesn't affect width */
+}
+
+/* Styling the buttons */
+button {
+	background-color: #000;
+	color: white;
+	border: none;
+	padding: 10px 15px;
+	text-transform: uppercase;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+button:hover {
+	background-color: #444;
+}
+
+/* Link styles for 'Forgot Password' and 'Sign Up' */
+a,
+button.sign-up-btn {
+	text-decoration: none;
+	color: #000;
+	background-color: transparent;
+	padding: 0;
+	border: none;
+	cursor: pointer;
+}
+
+/* Handling the layout for small screens */
+@media (max-width: 768px) {
+	.login-container {
+		flex-direction: column;
+	}
+}

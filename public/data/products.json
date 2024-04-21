@@ -1,0 +1,877 @@
+{
+  "products": [
+    {
+      "id": "a706db20-4aae-41e9-b2d2-dba9e522fe11",
+      "name": "Tent 1",
+      "category": "tents",
+      "description": "A durable, waterproof 4-person tent.",
+      "price": 199.99,
+      "environmentalImpact": {
+        "carbonFootprint": 10.2,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Return to store for recycling"
+      },
+      "3dModel": {
+        "fileUrl": "/3d-models/tents/tent-1/scene.gltf"
+      },
+      "image": "/images/tent1.jpeg",
+      "i18n": {
+        "ko": {
+          "name": "텐트 1",
+          "description": "내구성이 있고 방수인 4인용 텐트입니다."
+        },
+        "zh-TW": {
+          "name": "帐篷1",
+          "description": "耐用、防水的4人帐篷。"
+        },
+        "pt-BR": {
+          "name": "Barraca 1",
+          "description": "Uma barraca para 4 pessoas, durável e à prova d'água."
+        }
+      }
+    },
+    {
+      "id": "aa9dd84a-6791-438a-8ce9-9b19fa8ca60a",
+      "name": "Tent 2",
+      "category": "tents",
+      "description": "A durable, waterproof 4-person tent.",
+      "price": 199.99,
+      "environmentalImpact": {
+        "carbonFootprint": 10.2,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Return to store for recycling"
+      },
+      "3dModel": {
+        "fileUrl": "/3d-models/tents/tent-2/scene.gltf"
+      },
+      "image": "/images/tent2.jpeg",
+      "i18n": {
+        "ko": {
+          "name": "텐트 2",
+          "description": "내구성이 있고 방수인 4인용 텐트입니다."
+        },
+        "zh-TW": {
+          "name": "帐篷2",
+          "description": "耐用、防水的4人帐篷。"
+        },
+        "pt-BR": {
+          "name": "Barraca 2",
+          "description": "Uma barraca para 4 pessoas, durável e à prova d'água."
+        }
+      }
+    },
+    {
+      "id": "e40f76b1-c80e-420c-9598-f3cac5e1e92d",
+      "name": "Tent 4",
+      "category": "tents",
+      "description": "A durable, waterproof 4-person tent.",
+      "price": 199.99,
+      "environmentalImpact": {
+        "carbonFootprint": 10.2,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Return to store for recycling"
+      },
+      "3dModel": null,
+      "image": "/images/tent4.jpeg",
+      "i18n": {
+        "ko": {
+          "name": "텐트 4",
+          "description": "내구성이 있고 방수인 4인용 텐트입니다."
+        },
+        "zh-TW": {
+          "name": "帐篷4",
+          "description": "耐用、防水的4人帐篷。"
+        },
+        "pt-BR": {
+          "name": "Barraca 4",
+          "description": "Uma barraca para 4 pessoas, durável e à prova d'água."
+        }
+      }
+    },
+    {
+      "id": "97296bcb-d0a2-4542-a1b5-b8f109521af4",
+      "name": "Tent 3",
+      "category": "tents",
+      "description": "A durable, waterproof 4-person tent.",
+      "price": 199.99,
+      "environmentalImpact": {
+        "carbonFootprint": 10.2,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Return to store for recycling"
+      },
+      "3dModel": null,
+      "image": "/images/tent3.jpeg",
+      "i18n": {
+        "ko": {
+          "name": "텐트 3",
+          "description": "내구성이 있고 방수인 4인용 텐트입니다."
+        },
+        "zh-TW": {
+          "name": "帐篷3",
+          "description": "耐用、防水的4人帐篷。"
+        },
+        "pt-BR": {
+          "name": "Barraca 3",
+          "description": "Uma barraca para 4 pessoas, durável e à prova d'água."
+        }
+      }
+    },
+    {
+      "id": "25bcd353-35e3-43e9-8db0-3b755f19653f",
+      "name": "Backpack 1",
+      "category": "backpacks",
+      "description": "A durable, waterproof and lightweight backpack.",
+      "price": 99.99,
+      "environmentalImpact": {
+        "carbonFootprint": 5.2,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Return to store for recycling"
+      },
+      "3dModel": {
+        "fileUrl": "/3d-models/backpacks/backpack-1/scene.gltf"
+      },
+      "image": "/images/backpack1.jpeg",
+      "i18n": {
+        "ko": {
+          "name": "배낭 1",
+          "description": "내구성이 있고 방수이며 가벼운 배낭입니다."
+        },
+        "zh-TW": {
+          "name": "背包1",
+          "description": "耐用、防水且轻便的背包。"
+        },
+        "pt-BR": {
+          "name": "Mochila 1",
+          "description": "Uma mochila durável, à prova d'água e leve."
+        }
+      }
+    },
+    {
+      "id": "a4cf2a7d-7845-42eb-95a4-d9b1c6ebbb0e",
+      "name": "Backpack 2",
+      "category": "backpacks",
+      "description": "A durable, waterproof and lightweight backpack.",
+      "price": 99.99,
+      "environmentalImpact": {
+        "carbonFootprint": 5.2,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Return to store for recycling"
+      },
+      "3dModel": {
+        "fileUrl": "/3d-models/backpacks/backpack-2/scene.gltf"
+      },
+      "image": "/images/backpack2.jpeg",
+      "i18n": {
+        "ko": {
+          "name": "배낭 2",
+          "description": "내구성이 있고 방수이며 가벼운 배낭입니다."
+        },
+        "zh-TW": {
+          "name": "背包2",
+          "description": "耐用、防水且轻便的背包。"
+        },
+        "pt-BR": {
+          "name": "Mochila 2",
+          "description": "Uma mochila durável, à prova d'água e leve."
+        }
+      }
+    },
+    {
+      "id": "5a32718f-1080-4196-84e6-22a86f4572c0",
+      "name": "Backpack 3",
+      "category": "backpacks",
+      "description": "A durable, waterproof and lightweight backpack.",
+      "price": 99.99,
+      "environmentalImpact": {
+        "carbonFootprint": 5.2,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Return to store for recycling"
+      },
+      "3dModel": {
+        "fileUrl": "/3d-models/backpacks/backpack-3/scene.gltf",
+        "scaleFactor": 0.5
+      },
+      "image": "/images/backpack3.jpeg",
+      "i18n": {
+        "ko": {
+          "name": "배낭 3",
+          "description": "내구성이 있고 방수이며 가벼운 배낭입니다."
+        },
+        "zh-TW": {
+          "name": "背包3",
+          "description": "耐用、防水且轻便的背包。"
+        },
+        "pt-BR": {
+          "name": "Mochila 3",
+          "description": "Uma mochila durável, à prova d'água e leve."
+        }
+      }
+    },
+    {
+      "id": "5a32718f-1080-4196-84e6-22a86f4572c0",
+      "name": "Backpack 4",
+      "category": "backpacks",
+      "description": "A durable, waterproof and lightweight backpack.",
+      "price": 99.99,
+      "environmentalImpact": {
+        "carbonFootprint": 4.2,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Return to store for recycling"
+      },
+      "image": "/images/backpack4.jpeg",
+      "i18n": {
+        "ko": {
+          "name": "배낭 4",
+          "description": "내구성이 있고 방수이며 가벼운 배낭입니다."
+        },
+        "zh-TW": {
+          "name": "背包4",
+          "description": "耐用、防水且轻便的背包。"
+        },
+        "pt-BR": {
+          "name": "Mochila 4",
+          "description": "Uma mochila durável, à prova d'água e leve."
+        }
+      }
+    },
+    {
+      "id": "ca13b76c-d6f8-42de-b26b-aa466af43059",
+      "name": "Camping chair 1",
+      "category": "camping_chairs",
+      "description": "A durable, cut resistant camping chair.",
+      "price": 49.99,
+      "environmentalImpact": {
+        "carbonFootprint": 3.2,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Return to store for recycling"
+      },
+      "3dModel": {
+        "fileUrl": "/3d-models/camping_chairs/camping_chair-1/scene.gltf"
+      },
+      "image": "/images/camping-chair1.webp",
+      "i18n": {
+        "ko": {
+          "name": "캠핑 의자 1",
+          "description": "내구성이 있고 절단 방지 가능한 캠핑 의자입니다."
+        },
+        "zh-TW": {
+          "name": "露营椅1",
+          "description": "耐用、防割的露营椅。"
+        },
+        "pt-BR": {
+          "name": "Cadeira de Acampamento 1",
+          "description": "Uma cadeira de acampamento durável e resistente a cortes."
+        }
+      }
+    },
+    {
+      "id": "0c842264-2d0c-4050-9674-9d2750c516de",
+      "name": "Camping chair 2",
+      "category": "camping_chairs",
+      "description": "A durable, cut resistant camping chair.",
+      "price": 49.99,
+      "environmentalImpact": {
+        "carbonFootprint": 3.2,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Return to store for recycling"
+      },
+      "3dModel": {
+        "fileUrl": "/3d-models/camping_chairs/camping_chair-2/scene.gltf"
+      },
+      "image": "/images/camping-chair2.jpeg",
+      "i18n": {
+        "ko": {
+          "name": "캠핑 의자 2",
+          "description": "내구성이 있고 절단 방지 가능한 캠핑 의자입니다."
+        },
+        "zh-TW": {
+          "name": "露营椅2",
+          "description": "耐用、防割的露营椅。"
+        },
+        "pt-BR": {
+          "name": "Cadeira de Acampamento 2",
+          "description": "Uma cadeira de acampamento durável e resistente a cortes."
+        }
+      }
+    },
+    {
+      "id": "38ad70a5-5f6b-4f88-b9da-0ddec39cf238",
+      "name": "Camping table 1",
+      "description": "The perfect camping table for your next adventure.",
+      "category": "camping_tables",
+      "price": 99.99,
+      "environmentalImpact": {
+        "carbonFootprint": 4.2,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Return to store for recycling"
+      },
+      "3dModel": {
+        "fileUrl": "/3d-models/camping_tables/table-1/scene.gltf"
+      },
+      "image": "/images/camping-table1.jpg",
+      "i18n": {
+        "ko": {
+          "name": "캠핑 테이블 1",
+          "description": "다음 모험을 위한 완벽한 캠핑 테이블입니다."
+        },
+        "zh-TW": {
+          "name": "露营桌子1",
+          "description": "您下次冒险的完美露营桌。"
+        },
+        "pt-BR": {
+          "name": "Mesa de Camping 1",
+          "description": "A mesa de camping perfeita para a sua próxima aventura."
+        }
+      }
+    },
+    {
+      "id": "46c150b4-9d70-4643-9754-22d68710699a",
+      "name": "Cooler 1",
+      "description": "A durable, waterproof and lightweight cooler.",
+      "category": "other",
+      "price": 79.99,
+      "environmentalImpact": {
+        "carbonFootprint": 6.2,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Return to store for recycling"
+      },
+      "3dModel": {
+        "fileUrl": "/3d-models/coolers/cooler-1/scene.gltf"
+      },
+      "image": "/images/cooler1.jpeg",
+      "i18n": {
+        "ko": {
+          "description": "내구성이 있고 방수이며 가벼운 쿨러입니다."
+        },
+        "zh-TW": {
+          "name": "冷藏箱1",
+          "description": "耐用、防水且轻便的冷藏箱。"
+        },
+        "pt-BR": {
+          "name": "Cooler 1",
+          "description": "Um cooler durável, à prova d'água e leve."
+        }
+      }
+    },
+    {
+      "id": "6a86db40-a9a7-46e1-8b5e-35073af4c232",
+      "name": "Cooler 2",
+      "description": "A durable, waterproof and lightweight cooler.",
+      "category": "other",
+      "price": 79.99,
+      "environmentalImpact": {
+        "carbonFootprint": 6.2,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Return to store for recycling"
+      },
+      "3dModel": {
+        "fileUrl": "/3d-models/coolers/cooler-2/scene.gltf"
+      },
+      "image": "/images/cooler2.webp",
+      "i18n": {
+        "ko": {
+          "name": "쿨러 2",
+          "description": "내구성이 있고 방수이며 가벼운 쿨러입니다."
+        },
+        "zh-TW": {
+          "name": "冷藏箱2",
+          "description": "耐用、防水且轻便的冷藏箱。"
+        },
+        "pt-BR": {
+          "name": "Cooler 2",
+          "description": "Um cooler durável, à prova d'água e leve."
+        }
+      }
+    },
+    {
+      "id": "c7806744-dbae-42ce-8067-f205d3cb3d86",
+      "name": "Matches",
+      "category": "other",
+      "description": "A pack of 100 waterproof matches.",
+      "price": 4.99,
+      "environmentalImpact": {
+        "carbonFootprint": 0.2,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Recycle"
+      },
+      "3dModel": {
+        "fileUrl": "/3d-models/other/matches/scene.gltf"
+      },
+      "image": "/images/matches.jpeg",
+      "i18n": {
+        "ko": {
+          "name": "성냥",
+          "description": "100개의 방수 성냥 한 팩."
+        },
+        "zh-TW": {
+          "name": "火柴",
+          "description": "一盒100根防水火柴。"
+        },
+        "pt-BR": {
+          "name": "Fósforos",
+          "description": "Um pacote de 100 fósforos à prova d'água."
+        }
+      }
+    },
+    {
+      "id": "c2a6d587-16bc-4892-94f9-e572ddbb40d0",
+      "name": "Rope",
+      "category": "other",
+      "description": "A 50ft long, durable rope.",
+      "price": 9.99,
+      "environmentalImpact": {
+        "carbonFootprint": 0.5,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Biodegradable"
+      },
+      "3dModel": {
+        "fileUrl": "/3d-models/other/rope/scene.gltf"
+      },
+      "image": "/images/rope.jpeg",
+      "i18n": {
+        "ko": {
+          "name": "로프",
+          "description": "50피트 길이의 내구성 있는 로프."
+        },
+        "zh-TW": {
+          "name": "绳子",
+          "description": "50英尺长的耐用绳子。"
+        },
+        "pt-BR": {
+          "name": "Corda",
+          "description": "Uma corda durável de 50 pés de comprimento."
+        }
+      }
+    },
+    {
+      "id": "cf7693e7-b94c-4935-8b38-25cc4c4bebcd",
+      "name": "Knife 1",
+      "category": "tools",
+      "description": "Durable, damascus steel knife.",
+      "price": 49.99,
+      "environmentalImpact": {
+        "carbonFootprint": 1.2,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Return to store for recycling"
+      },
+      "3dModel": {
+        "fileUrl": "/3d-models/tools/knife-1/scene.gltf"
+      },
+      "image": "/images/knife1.jpeg",
+      "i18n": {
+        "ko": {
+          "name": "칼 1",
+          "description": "내구성 있는 다마스커스 강철 칼."
+        },
+        "zh-TW": {
+          "name": "刀 1",
+          "description": "耐用的大马士革钢刀。"
+        },
+        "pt-BR": {
+          "name": "Faca 1",
+          "description": "Faca de aço damasco durável."
+        }
+      }
+    },
+    {
+      "id": "9588ff3e-3555-4b4a-a830-f9b3d830a3b8",
+      "name": "Knife 2",
+      "category": "tools",
+      "description": "Sharp, stainless steel knife.",
+      "price": 29.99,
+      "environmentalImpact": {
+        "carbonFootprint": 0.8,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Return to store for recycling"
+      },
+      "3dModel": {
+        "fileUrl": "/3d-models/tools/knife-2/scene.gltf"
+      },
+      "image": "/images/knife2.jpeg",
+      "i18n": {
+        "ko": {
+          "name": "칼 2",
+          "description": "날카로운 스테인레스 스틸 칼."
+        },
+        "zh-TW": {
+          "name": "刀 2",
+          "description": "锋利的不锈钢刀。"
+        },
+        "pt-BR": {
+          "name": "Faca 2",
+          "description": "Faca de aço inoxidável afiada."
+        }
+      }
+    },
+    {
+      "id": "5c911bc6-b5b3-4787-b682-efbc53ae0838",
+      "name": "Flare",
+      "category": "portable_lights",
+      "description": "A pack of 5 flares.",
+      "price": 19.99,
+      "environmentalImpact": {
+        "carbonFootprint": 0.8,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Dispose of at local waste facility"
+      },
+      "3dModel": {
+        "fileUrl": "/3d-models/portable_lights/flare-1/scene.gltf"
+      },
+      "image": "/images/flare.jpeg",
+      "i18n": {
+        "ko": {
+          "name": "신호탄",
+          "description": "5개의 신호탄 한 팩."
+        },
+        "zh-TW": {
+          "name": "信号弹",
+          "description": "一包5枚信号弹。"
+        },
+        "pt-BR": {
+          "name": "Sinalizador",
+          "description": "Um pacote de 5 sinalizadores."
+        }
+      }
+    },
+    {
+      "id": "439c7c1f-29e2-4cf7-88c6-b70d2cbb56cf",
+      "name": "Flashlight 1",
+      "category": "portable_lights",
+      "description": "A durable, waterproof flashlight.",
+      "price": 29.99,
+      "environmentalImpact": {
+        "carbonFootprint": 0.8,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Return to store for recycling"
+      },
+      "3dModel": {
+        "fileUrl": "/3d-models/portable_lights/flashlight-1/scene.gltf"
+      },
+      "image": "/images/flashlight1.jpeg",
+      "i18n": {
+        "ko": {
+          "name": "손전등 1",
+          "description": "내구성 있는 방수 손전등."
+        },
+        "zh-TW": {
+          "name": "手电筒 1",
+          "description": "耐用的防水手电筒。"
+        },
+        "pt-BR": {
+          "name": "Lanterna 1",
+          "description": "Uma lanterna durável e à prova d'água."
+        }
+      }
+    },
+    {
+      "id": "67060eac-110e-4b2e-80de-7e69dc2f2a8c",
+      "name": "Flashlight 2",
+      "category": "portable_lights",
+      "description": "A durable, waterproof flashlight.",
+      "price": 29.99,
+      "environmentalImpact": {
+        "carbonFootprint": 0.8,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Return to store for recycling"
+      },
+      "3dModel": {
+        "fileUrl": "/3d-models/portable_lights/flashlight-2/scene.gltf"
+      },
+      "image": "/images/flashlight2.avif",
+      "i18n": {
+        "ko": {
+          "name": "손전등 2",
+          "description": "내구성 있는 방수 손전등."
+        },
+        "zh-TW": {
+          "name": "手电筒 2",
+          "description": "耐用的防水手电筒。"
+        },
+        "pt-BR": {
+          "name": "Lanterna 2",
+          "description": "Uma lanterna durável e à prova d'água."
+        }
+      }
+    },
+    {
+      "id": "27c84af7-3a3e-46dd-a6e1-f453ac32d4c3",
+      "name": "Water bottle 1",
+      "category": "tools",
+      "description": "A durable, stainless steel water bottle.",
+      "price": 19.99,
+      "environmentalImpact": {
+        "carbonFootprint": 0.8,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Return to store for recycling"
+      },
+      "3dModel": null,
+      "image": "/images/bottle1.webp",
+      "i18n": {
+        "ko": {
+          "name": "물병 1",
+          "description": "내구성 있는 스테인레스 스틸 물병."
+        },
+        "zh-TW": {
+          "name": "水壶 1",
+          "description": "耐用的不锈钢水壶。"
+        },
+        "pt-BR": {
+          "name": "Garrafa de água 1",
+          "description": "Uma garrafa de água durável de aço inoxidável."
+        }
+      }
+    },
+    {
+      "id": "586d7068-07c4-4af9-b5e2-cee2564441cb",
+      "name": "Water bottle 2",
+      "category": "tools",
+      "description": "A durable, stainless steel water bottle.",
+      "price": 19.99,
+      "environmentalImpact": {
+        "carbonFootprint": 0.8,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Return to store for recycling"
+      },
+      "3dModel": null,
+      "image": "/images/bottle2.webp",
+      "i18n": {
+        "ko": {
+          "name": "물병 2",
+          "description": "내구성 있는 스테인레스 스틸 물병."
+        },
+        "zh-TW": {
+          "name": "水壶 2",
+          "description": "耐用的不锈钢水壶。"
+        },
+        "pt-BR": {
+          "name": "Garrafa de água 2",
+          "description": "Uma garrafa de água durável de aço inoxidável."
+        }
+      }
+    },
+    {
+      "id": "16a8ff18-2b8e-43c1-a8cc-782038b0cef1",
+      "name": "Kit 1",
+      "category": "kits",
+      "description": "A camping kit with all the essentials.",
+      "price": 299.99,
+      "environmentalImpact": {
+        "carbonFootprint": 10.2,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Some items are recyclable, others are biodegradable"
+      },
+      "3dModel": null,
+      "image": "/images/kit1.jpeg",
+      "i18n": {
+        "ko": {
+          "name": "키트 1",
+          "description": "모든 필수품이 든 캠핑 키트."
+        },
+        "zh-TW": {
+          "name": "套件 1",
+          "description": "包含所有必备物品的露营套件。"
+        },
+        "pt-BR": {
+          "name": "Kit 1",
+          "description": "Um kit de acampamento com todos os itens essenciais."
+        }
+      }
+    },
+    {
+      "id": "c40903ea-7de8-43b8-bc8b-49558f0bf3ac",
+      "name": "Kit 2",
+      "category": "kits",
+      "description": "A camping kit with all the essentials.",
+      "price": 299.99,
+      "environmentalImpact": {
+        "carbonFootprint": 10.2,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Some items are recyclable, others are biodegradable"
+      },
+      "3dModel": null,
+      "image": "/images/kit2.jpeg",
+      "i18n": {
+        "ko": {
+          "name": "키트 2",
+          "description": "모든 필수품이 든 캠핑 키트."
+        },
+        "zh-TW": {
+          "name": "套件 2",
+          "description": "包含所有必备物品的露营套件。"
+        },
+        "pt-BR": {
+          "name": "Kit 2",
+          "description": "Um kit de acampamento com todos os itens essenciais."
+        }
+      }
+    },
+    {
+      "id": "3e252726-d401-47be-9031-464bb3303865",
+      "name": "Kit 3",
+      "category": "kits",
+      "description": "A camping kit with all the essentials.",
+      "price": 299.99,
+      "environmentalImpact": {
+        "carbonFootprint": 10.2,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Some items are recyclable, others are biodegradable"
+      },
+      "3dModel": null,
+      "image": "/images/kit3.jpeg",
+      "i18n": {
+        "ko": {
+          "name": "키트 3",
+          "description": "모든 필수품이 든 캠핑 키트."
+        },
+        "zh-TW": {
+          "name": "套件 3",
+          "description": "包含所有必备物品的露营套件。"
+        },
+        "pt-BR": {
+          "name": "Kit 3",
+          "description": "Um kit de acampamento com todos os itens essenciais."
+        }
+      }
+    },
+    {
+      "id": "ff9f87cf-447b-45e3-a721-e7376787d8e1",
+      "name": "Ligher 1",
+      "category": "other",
+      "description": "A refillable, waterproof lighter.",
+      "price": 9.99,
+      "environmentalImpact": {
+        "carbonFootprint": 0.2,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Recycle"
+      },
+      "3dModel": null,
+      "image": "/images/lighter1.jpeg",
+      "i18n": {
+        "ko": {
+          "name": "라이터 1",
+          "description": "충전 가능한 방수 라이터."
+        },
+        "zh-TW": {
+          "name": "打火机 1",
+          "description": "可加油的防水打火机。"
+        },
+        "pt-BR": {
+          "name": "Isqueiro 1",
+          "description": "Um isqueiro à prova d'água e recarregável."
+        }
+      }
+    },
+    {
+      "id": "209e73ca-1a87-46db-9b66-9f3ecc233d03",
+      "name": "Shoes 1",
+      "category": "footwear",
+      "description": "Durable, waterproof hiking shoes.",
+      "price": 99.99,
+      "environmentalImpact": {
+        "carbonFootprint": 5.2,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Return to store for recycling"
+      },
+      "3dModel": null,
+      "image": "/images/shoes1.jpeg",
+      "i18n": {
+        "ko": {
+          "name": "신발 1",
+          "description": "내구성 있는 방수 하이킹화."
+        },
+        "zh-TW": {
+          "name": "鞋子 1",
+          "description": "耐用的防水徒步鞋。"
+        },
+        "pt-BR": {
+          "name": "Sapatos 1",
+          "description": "Sapatos de caminhada duráveis e à prova d'água."
+        }
+      }
+    },
+    {
+      "id": "209e73ca-1a87-46db-9b66-9f3ecc233d03",
+      "name": "Shoes 2",
+      "category": "footwear",
+      "description": "Durable, waterproof hiking shoes.",
+      "price": 59.99,
+      "environmentalImpact": {
+        "carbonFootprint": 5.2,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Return to store for recycling"
+      },
+      "3dModel": null,
+      "image": "/images/shoes2.jpeg",
+      "i18n": {
+        "ko": {
+          "name": "신발 2",
+          "description": "내구성 있는 방수 하이킹화."
+        },
+        "zh-TW": {
+          "name": "鞋子 2",
+          "description": "耐用的防水徒步鞋。"
+        },
+        "pt-BR": {
+          "name": "Sapatos 2",
+          "description": "Sapatos de caminhada duráveis e à prova d'água."
+        }
+      }
+    },
+    {
+      "id": "6ab5bb22-147d-4534-b2a2-2447bbc6ebd73",
+      "name": "Stove 1",
+      "category": "stoves",
+      "description": "Fuel efficient camping stove.",
+      "price": 49.99,
+      "environmentalImpact": {
+        "carbonFootprint": 3.2,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Return to store for recycling"
+      },
+      "3dModel": null,
+      "image": "/images/stove1.jpeg",
+      "i18n": {
+        "ko": {
+          "name": "난로 1",
+          "description": "연료 효율적인 캠핑 난로."
+        },
+        "zh-TW": {
+          "name": "炉子 1",
+          "description": "燃料效率高的露营炉。"
+        },
+        "pt-BR": {
+          "name": "Fogão 1",
+          "description": "Fogão de acampamento eficiente em combustível."
+        }
+      }
+    },
+    {
+      "id": "49228226-e462-4b6a-bd77-2f86beb369dc",
+      "name": "Stove 2",
+      "category": "stoves",
+      "description": "Fuel efficient camping stove.",
+      "price": 49.99,
+      "environmentalImpact": {
+        "carbonFootprint": 3.2,
+        "recyclableMaterials": true,
+        "endOfLifeOptions": "Return to store for recycling"
+      },
+      "3dModel": null,
+      "image": "/images/stove2.jpeg",
+      "i18n": {
+        "ko": {
+          "name": "난로 2",
+          "description": "연료 효율적인 캠핑 난로."
+        },
+        "zh-TW": {
+          "name": "炉子 2",
+          "description": "燃料效率高的露营炉。"
+        },
+        "pt-BR": {
+          "name": "Fogão 2",
+          "description": "Fogão de acampamento eficiente em combustível."
+        }
+      }
+    }
+  ]
+}

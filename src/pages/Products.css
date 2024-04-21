@@ -1,0 +1,59 @@
+/* Ensure the cards have equal width and spacing */
+.product-grid .card {
+	margin-bottom: 1rem;
+}
+
+/* Image styling */
+.product-image {
+	width: 100%; /* Make the image fill the card */
+	height: 200px; /* Keep the image aspect ratio */
+	object-fit: cover; /* Cover the area without stretching */
+}
+
+/* Title styling */
+.product-title {
+	font-size: 1.25rem;
+	margin-bottom: 0.5rem;
+}
+
+/* Description styling, assuming you want it smaller than the title */
+.product-description {
+	font-size: 1rem;
+	color: #666; /* A lighter shade for the description */
+}
+
+/* Price styling */
+.product-price {
+	font-size: 1.25rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+}
+
+/* Button styling */
+.product-grid .btn {
+	width: 100%; /* Full-width buttons */
+}
+
+/* Optional: Add a hover effect to the cards for interactivity */
+.product-grid .card:hover {
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Simple shadow effect on hover */
+	transform: translateY(-2px); /* Slightly raise the card */
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Responsive tweaks: adjust the number of columns based on screen size */
+@media (min-width: 768px) {
+	.product-grid .col-3 {
+		flex: 0 0 33.333333%; /* 3 columns on medium screens */
+		max-width: 33.333333%;
+	}
+}
+
+@media (min-width: 992px) {
+	.product-grid .col-3 {
+		flex: 0 0 25%; /* 4 columns on large screens */
+		max-width: 25%;
+	}
+}

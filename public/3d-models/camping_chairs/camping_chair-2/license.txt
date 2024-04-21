@@ -1,0 +1,11 @@
+Model Information:
+* title:	Turkey Chair (Blue/Gray)
+* source:	https://sketchfab.com/3d-models/turkey-chair-bluegray-0e3bdb77aa9246ceb90b5710f0a31533
+* author:	riki (https://sketchfab.com/rikkilambo)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Turkey Chair (Blue/Gray)" (https://sketchfab.com/3d-models/turkey-chair-bluegray-0e3bdb77aa9246ceb90b5710f0a31533) by riki (https://sketchfab.com/rikkilambo) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

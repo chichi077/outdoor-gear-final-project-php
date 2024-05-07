@@ -1,0 +1,18 @@
+[
+{"type":"header","version":"5.2.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"outdoor_db"},
+{"type":"table","name":"category_tb","database":"outdoor_db","data":
+[
+{"cid":"1","pid":"1","cname":"tents"},
+{"cid":"2","pid":"2","cname":"backpacks"},
+{"cid":"3","pid":"3","cname":"camping chairs"},
+{"cid":"4","pid":"4","cname":"camping tables"},
+{"cid":"5","pid":"5","cname":"other"},
+{"cid":"6","pid":"6","cname":"tools"},
+{"cid":"7","pid":"7","cname":"portable lights"},
+{"cid":"8","pid":"8","cname":"kits"},
+{"cid":"9","pid":"9","cname":"footwear"},
+{"cid":"10","pid":"10","cname":"stoves"}
+]
+}
+]

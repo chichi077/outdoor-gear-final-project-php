@@ -12,6 +12,7 @@ import ProductsComponent from './pages/Productscomponent';
 import Environmental from './pages/about/Environmental';
 import AdminPage from './pages/admin/AdminPage';
 import { ProductPage } from './pages/product/Page';
+import { ProductRegisterPage } from './pages/product/Register';
 
 export const router = createBrowserRouter([
 	{
@@ -62,6 +63,20 @@ export const router = createBrowserRouter([
 					<AdminPage />
 				</LayoutWrapper>
 			</AdminGuard >
+		),
+	},
+	{
+		path: '/register',
+		element: (
+			// <AdminGuard>
+			// 	<LayoutWrapper titleKey="pages.register">
+			// 		<ProductRegisterPage />
+			// 	</LayoutWrapper>
+			// </AdminGuard >
+
+			<LayoutWrapper titleKey="pages.register">
+			 		<ProductRegisterPage />
+			</LayoutWrapper>
 		),
 	},
 	{

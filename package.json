@@ -20,13 +20,14 @@
     "@use-gesture/react": "^10.3.1",
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
+    "cors": "^2.8.5",
     "crypto-js": "^4.2.0",
+    "express": "^4.19.2",
     "i18next": "^23.10.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
     "react-i18next": "^14.1.0",
-    "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
     "three": "^0.162.0",
     "web-vitals": "^2.1.4"
@@ -34,7 +35,8 @@
   "devDependencies": {
     "eslint": "^8.57.0",
     "eslint-config-neon": "^0.1.47",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "react-router-dom": "^6.23.0"
   },
   "contributors": [
     {

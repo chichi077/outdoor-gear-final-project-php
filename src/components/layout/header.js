@@ -44,7 +44,7 @@ export function Header({ title }) {
 	const filteredRoutes = useMemo(() => {
 		const routes = [
 			new Route().setPath('/').setLabel(t('header.home')),
-			new Route().setPath('/environmental').setLabel(t('header.environmental')),
+			new Route().setPath('/register').setLabel(t('header.register')),
 			new Route().setPath('/interactive').setLabel(t('header.interactive')),
 			new Route().setPath('/admin').setLabel(t('header.admin')).setAdmin(),
 			new Route().setPath('/products').setLabel(t('header.products')),

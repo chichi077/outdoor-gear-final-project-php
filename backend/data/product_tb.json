@@ -1,36 +1,116 @@
 [
-{"type":"header","version":"5.2.1","comment":"Export to JSON plugin for PHPMyAdmin"},
-{"type":"database","name":"outdoor_db"},
-{"type":"table","name":"product_tb","database":"outdoor_db","data":
-[
-{"pid":"1","pname":"Tent 1","category_id":"1","desc":"A durable, waterproof 4-person tent.","price":"199.99"},
-{"pid":"2","pname":"Tent 2","category_id":"1","desc":"A durable, waterproof 4-person tent.","price":"199.99"},
-{"pid":"3","pname":"Tent 3","category_id":"1","desc":"A durable, waterproof 4-person tent.","price":"199.99"},
-{"pid":"4","pname":"Tent 4","category_id":"1","desc":"A durable, waterproof 4-person tent.","price":"199.99"},
-{"pid":"5","pname":"Backpack 1","category_id":"2","desc":"A durable, waterproof and lightweight backpack.","price":"99.99"},
-{"pid":"6","pname":"Backpack 2","category_id":"2","desc":"A durable, waterproof and lightweight backpack.","price":"99.99"},
-{"pid":"7","pname":"Backpack 4","category_id":"2","desc":"A durable, waterproof and lightweight backpack.","price":"99.99"},
-{"pid":"8","pname":"Camping chair 1","category_id":"3","desc":"A durable, cut resistant camping chair.","price":"49.99"},
-{"pid":"9","pname":"Camping chair 2","category_id":"3","desc":"A durable, cut resistant camping chair.","price":"49.99"},
-{"pid":"10","pname":"Camping table 1","category_id":"4","desc":"The perfect camping table for your next adventure.","price":"99.99"},
-{"pid":"11","pname":"Cooler 1","category_id":"5","desc":"A durable, waterproof and lightweight cooler.","price":"79.99"},
-{"pid":"12","pname":"Cooler 2","category_id":"5","desc":"A durable, waterproof and lightweight cooler.","price":"79.99"},
-{"pid":"13","pname":"Matches","category_id":"5","desc":"A pack of 100 waterproof matches.","price":"4.99"},
-{"pid":"14","pname":"Rope","category_id":"5","desc":"A 50ft long, durable rope.","price":"9.99"},
-{"pid":"15","pname":"Lighter","category_id":"5","desc":"A refillable, waterproof lighter.","price":"9.99"},
-{"pid":"16","pname":"Knife 1","category_id":"6","desc":"Durable, damascus steel knife.","price":"49.99"},
-{"pid":"17","pname":"Knife 2","category_id":"6","desc":"Sharp, stainless steel knife.","price":"29.99"},
-{"pid":"18","pname":"Water bottle 1","category_id":"6","desc":"A durable, stainless steel water bottle.","price":"19.99"},
-{"pid":"19","pname":"Water bottle 2","category_id":"6","desc":"A durable, stainless steel water bottle.","price":"19.99"},
-{"pid":"20","pname":"Flare","category_id":"7","desc":"A pack of 5 flares.","price":"19.99"},
-{"pid":"21","pname":"Flashlight 1","category_id":"7","desc":"A durable, waterproof flashlight.","price":"29.99"},
-{"pid":"22","pname":"Flashlight 2","category_id":"7","desc":"A durable, waterproof flashlight.","price":"29.99"},
-{"pid":"23","pname":"Kit 1","category_id":"8","desc":"A camping kit with all the essentials.","price":"299.99"},
-{"pid":"24","pname":"Kit 2","category_id":"8","desc":"A camping kit with all the essentials.","price":"299.99"},
-{"pid":"25","pname":"Kit 3","category_id":"8","desc":"A camping kit with all the essentials.","price":"299.99"},
-{"pid":"26","pname":"Shoes 2","category_id":"9","desc":"Durable, waterproof hiking shoes.","price":"59.99"},
-{"pid":"27","pname":"Stove 1","category_id":"10","desc":"Fuel efficient camping stove.","price":"49.99"},
-{"pid":"28","pname":"Stove 2","category_id":"10","desc":"Fuel efficient camping stove.","price":"49.99"}
-]
-}
+    {
+        "type": "header",
+        "version": "5.2.1",
+        "comment": "Export to JSON plugin for PHPMyAdmin"
+    },
+    {
+        "type": "database",
+        "name": "outdoor_db"
+    },
+    {
+        "type": "table",
+        "name": "product_tb",
+        "database": "outdoor_db",
+        "data": [
+            {
+                1","pname":"Tent 1","category_id":"1","desc":"A durable, waterproof 4-person tent.","price":"199.99"}{2",
+                "pname": "Tent 2",
+                "category_id": "1",
+                "desc": "A durable, waterproof 4-person tent.",
+                "price": "199.99"
+            },
+            {
+                3","pname":"Tent 3","category_id":"1","desc":"A durable, waterproof 4-person tent.","price":"199.99"},{4",
+                "pname": "Tent 4",
+                "category_id": "1",
+                "desc": "A durable, waterproof 4-person tent.",
+                "price": "199.99"
+            },
+            {
+                5","pname":"Backpack 1","category_id":"2","desc":"A durable, waterproof and lightweight backpack.","price":"99.99"},{6",
+                "pname": "Backpack 2",
+                "category_id": "2",
+                "desc": "A durable, waterproof and lightweight backpack.",
+                "price": "99.99"
+            },
+            {
+                7","pname":"Backpack 4","category_id":"2","desc":"A durable, waterproof and lightweight backpack.","price":"99.99"},{8",
+                "pname": "Camping chair 1",
+                "category_id": "3",
+                "desc": "A durable, cut resistant camping chair.",
+                "price": "49.99"
+            },
+            {
+                9","pname":"Camping chair 2","category_id":"3","desc":"A durable, cut resistant camping chair.","price":"49.99"},{10",
+                "pname": "Camping table 1",
+                "category_id": "4",
+                "desc": "The perfect camping table for your next adventure.",
+                "price": "99.99"
+            },
+            {
+                11","pname":"Cooler 1","category_id":"5","desc":"A durable, waterproof and lightweight cooler.","price":"79.99"},{12",
+                "pname": "Cooler 2",
+                "category_id": "5",
+                "desc": "A durable, waterproof and lightweight cooler.",
+                "price": "79.99"
+            },
+            {
+                13","pname":"Matches","category_id":"5","desc":"A pack of 100 waterproof matches.","price":"4.99"},{14",
+                "pname": "Rope",
+                "category_id": "5",
+                "desc": "A 50ft long, durable rope.",
+                "price": "9.99"
+            },
+            {
+                15","pname":"Lighter","category_id":"5","desc":"A refillable, waterproof lighter.","price":"9.99"},{16",
+                "pname": "Knife 1",
+                "category_id": "6",
+                "desc": "Durable, damascus steel knife.",
+                "price": "49.99"
+            },
+            {
+                17","pname":"Knife 2","category_id":"6","desc":"Sharp, stainless steel knife.","price":"29.99"},{18",
+                "pname": "Water bottle 1",
+                "category_id": "6",
+                "desc": "A durable, stainless steel water bottle.",
+                "price": "19.99"
+            },
+            {
+                19","pname":"Water bottle 2","category_id":"6","desc":"A durable, stainless steel water bottle.","price":"19.99"},{20",
+                "pname": "Flare",
+                "category_id": "7",
+                "desc": "A pack of 5 flares.",
+                "price": "19.99"
+            },
+            {
+                21","pname":"Flashlight 1","category_id":"7","desc":"A durable, waterproof flashlight.","price":"29.99"},{22",
+                "pname": "Flashlight 2",
+                "category_id": "7",
+                "desc": "A durable, waterproof flashlight.",
+                "price": "29.99"
+            },
+            {
+                23","pname":"Kit 1","category_id":"8","desc":"A camping kit with all the essentials.","price":"299.99"},{24",
+                "pname": "Kit 2",
+                "category_id": "8",
+                "desc": "A camping kit with all the essentials.",
+                "price": "299.99"
+            },
+            {
+                25","pname":"Kit 3","category_id":"8","desc":"A camping kit with all the essentials.","price":"299.99"},{26",
+                "pname": "Shoes 2",
+                "category_id": "9",
+                "desc": "Durable, waterproof hiking shoes.",
+                "price": "59.99"
+            },
+            {
+                27","pname":"Stove 1","category_id":"10","desc":"Fuel efficient camping stove.","price":"49.99"},{28",
+                "pname": "Stove 2",
+                "category_id": "10",
+                "desc": "Fuel efficient camping stove.",
+                "price": "49.99"
+            }
+        ]
+    }
 ]

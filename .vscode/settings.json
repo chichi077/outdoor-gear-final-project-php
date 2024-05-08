@@ -11,5 +11,10 @@
 	"css.styleSheets": ["node_modules/bootstrap/dist/css/bootstrap.css"],
 	"i18n-ally.localesPaths": ["src/locales"],
 	"i18n-ally.sourceLanguage": "en",
-	"i18n-ally.enabledParsers": ["js"]
+	"i18n-ally.enabledParsers": [
+		"js"
+	],
+	"[json]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	}
 }

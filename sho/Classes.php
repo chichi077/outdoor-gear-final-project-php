@@ -60,11 +60,24 @@ require("./Enc.php");
         function authenticate($password){
             $dbObj  =new DB(DB_SERVER_NAME, DB_USER, DB_PASSWORD, DB_NAME);
             $dbCon = $dbObj->connect(); //conect to database
-            $selectCmd = "SELECT * FROM users_tb WHERE email='".$this->email."'";
+            $selectCmd = "SELECT * FROM user_tb WHERE email='".$this->email."'";
             $result = $dbCon->query($selectCmd);
             $attempt = null;
-            if($result->num_rows > 0){  //if there
+            if($result->num_rows > 0){ 
                 $row = $result->fetch_assoc();
+                switch($row["user_type"]){
+                    case 1:
+                        $user_typeDB = "staff";
+                    break;
+                    case 2:
+                        $user_typeDB = "customer";
+                    break;
+                    case 3:
+                        $user_typeDB ="admin";
+                    break;
+                    default:
+                        throw new Exception("Some trouble about user_type on DataBase");
+                }
                 $attempt = $row["attempt"];
                 if($row["attempt"] == 0) {
                     Audit_generator("login","failed","User account locked.",$this->email);
@@ -75,7 +88,7 @@ require("./Enc.php");
                     $attempt = 5;
                     $this->fname = $row["fname"];
                     $this->lname = $row["lname"];
-                    $this->user_type = $row["user_type"];
+                    $this->user_type = $user_typeDB;    //$this->user_type is already converted to lowercase
                     $this->id = $row["uid"];
                     session_start();
                     $_SESSION["login_user"] = $this;    //Question!!,
@@ -134,57 +147,6 @@ require("./Enc.php");
         function db_close() {
             $this->db_connect->close();
         }
-    }
-    class fileUpload {
-        private $srcFile;
-        private $destAddr;
-        private $sizeCap;
-        function __construct($srcFile, $destAddr, $sizeCap) {
-            $this->srcFile = $srcFile;
-            $this->destAddr = $destAddr."/".$this->srcFile["name"];
-            $this->sizeCap = $sizeCap;
-        }
-
-        private function fileSize() {
-            if($this->srcFile["size"] > $this->sizeCap) {
-                throw new Exception("File size larger than ".$this->sizeCap,403);
-            }
-        }
-
-        private function ext_Chk() {
-            $contType = substr($this->srcFile["type"], 0, strpos($this->srcFile["type"],"/"));
-            $extArray = null;
-            switch($contType) {
-                case "image":
-                    $extArray = ["jpg", "jpeg", "png", "bmp"];
-                break;
-                case "application":
-                    $extArray = ["json"];
-                break;
-                default:
-                throw new Exception("Invalid file type", 403);
-            }
-            $finfo = new finfo(FILEINFO_MIME_TYPE);
-            $realExt = basename($finfo->file($this->srcFile["tmp_name"]));
-            if(!(false===array_search($realExt, $extArray))) {
-                return true;
-            }
-            throw new Exception("Invalid file type", 403);
-        }
-
-        function commitUpload() {
-            $this->fileSize();
-            $this->ext_Chk();
-            if(!move_uploaded_file($this->srcFile["tmp_name"], $this->destAddr)) {
-                throw new Exception("Failed to upload", 500);
-            }
-            // print_r($_FILES);
-            $destAddr = $_SERVER["SCRIPT_NAME"]."//".$_SERVER["SCRIPT_ADDR"].substr
-            ($_SERVER["SCRIPT_NAME"],0,stripos($_SERVER["SCRIPT_NAME"],"index.php")).substr($this->destAddr,2);
-            
-            return $destAddr;
-        }
-
     }
 
 

@@ -11,48 +11,7 @@
             Session_handler($_POST["id"]);
         }
 
-        switch ($_SERVER["PATH_INFO"]) {
-            case "/reg":
-                $postKey=["firstName","lastName","email","isAdmin","password"];
-                check_key($postKey,$_POST);
-              
-                    $dbObj=new DB(DB_SERVER_NAME,DB_USER_NAME,DB_PASSWORD,DB_NAME);
-                    $dbCon = $dbObj->connect(); // connect to the database
-                    $pass =password_hash($_POST['pass'],PASSWORD_BCRYPT,['cost'=>10]);
-                    // select [col_names|*] from  user_tb where condition 
-                    $selectCmd = "SELECT * FROM user_tb WHERE email='".$_POST['email']."'";
-
-
-                    //This line executes the SQL query on the database using the query method of the
-                    // $dbCon object, which is presumably a connection to the database. 
-                    //The result of the query is stored in the $result variable.
-                    $result = $dbCon->query($selectCmd); // execute the sql statement
-
-
-                    //This line checks if the number of rows returned by the query is greater than 0. 
-                    // If it is, that means a user with the provided email already exists in the database.
-                    if($result->num_rows>0){ 
-                        // print_r("num_row".$result->num_rows);
-                        $dbObj->db_close();
-                        Audit_generator("Registration","Failed","User already exists",$_POST["email"]);
-                        throw new Exception("Register failed",406);
-                    }
-
-                    $insertCmd = "INSERT INTO user_tb (firstName,lastName,email,pass) VALUES ('".$_POST['firstName']."','".$_POST['lastName']."','".$_POST['email']."','".$pass."',".$_POST['isAdmin'].")";
-                    $insertCmd = $dbCon -> prepare("INSERT INTO user_tb (firstName,lastName,email,isAdmin,password) VALUES (?,?,?,?,?)"); // prepare the sql statement
-                    $insertCmd -> bind_param("sssss",$_POST['firstName'],$_POST['lastName'],$_POST['email'],$pass,$_POST['isAdmin']); // bind the parameters
-
-                    $insertCmd -> execute(); // execute the sql statement
-                    $dbObj->db_close();
-
-                   
-                    Audit_generator("Registration","Success","User Registered",$_POST["email"]);
-                    sendHttpCode(201,"\nusers added");
-                 
-
-           
-                break;
-                
+        switch ($_SERVER["PATH_INFO"]) {        
             case "/login":
                 check_key(["email", "pass"],$_POST);
                 $userObj = new User($_POST["email"]);
@@ -67,7 +26,7 @@
                 //send a json output containing the information of all books
                 $db = new DB(DB_SERVER_NAME,DB_USER_NAME,DB_PASSWORD,DB_NAME);
                 $dbCon = $db->connect();
-                $selectCmd = "SELECT * FROM product_tb";
+                $selectCmd = "SELECT * FROM users_tb";
                 $result = $dbCon->query($selectCmd);
                 //show it in the json format
                 $output = [];
@@ -84,22 +43,22 @@
 
             // user shall be login to access this path
              
-            // case "/audit":
-                // if (session_status() === PHP_SESSION_NONE) throw new Exception("Forbiden request.", 401);
-                // header("Content-Type: application/json");
+            case "/audit":
+                if (session_status() === PHP_SESSION_NONE) throw new Exception("Forbiden request.", 401);
+                header("Content-Type: application/json");
                 
-                // $fileRoute = AUDIT_PATH;
+                $fileRoute = AUDIT_PATH;
               
-                // if (isset($_POST["date"])){
-                //     $date = $_POST["date"];
-                //     echo Audit_parseJson($date);
-                // }else{
-                //     $allFiles =listFolderFiles($fileRoute);
+                if (isset($_POST["date"])){
+                    $date = $_POST["date"];
+                    echo Audit_parseJson($date);
+                }else{
+                    $allFiles =listFolderFiles($fileRoute);
                 
-                //     print_r($allFiles);
-                // }
+                    print_r($allFiles);
+                }
               
-                // break;
+                break;
             //     case "/upload":
             //     //    enctype = "multipart/form-data"
             //        check_key(["bid"],$_POST);

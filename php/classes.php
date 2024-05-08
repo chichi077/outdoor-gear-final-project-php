@@ -1,4 +1,16 @@
 <?php
+// Allow requests from any origin - not recommended for production
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, X-Requested-With, Authorization');
+header('Access-Control-Allow-Credentials: true');
+// Respond to preflight requests
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    // Should return HTTP 200 status code
+    http_response_code(200);
+    exit;
+}
+
 //    require("./config.php");
    require("./function.php");
 
@@ -59,12 +71,14 @@
     }
     //book system
     class User {
-        private $id;
-        private $firstName;
-        private $lastName;
+        private $uid;
+        private $first_name;
+        private $last_name;
         private $email;
         private $isAdmin;
-       
+        private $user_type;
+        private $attempt;
+        
 
         function __construct($email)
         {
@@ -92,10 +106,12 @@
                 if(password_verify($pass,$row['pass'])){
                     $loginFlag = true;
                     $attempt =5;
-                    $this->firstName = $row['firstName'];
-                    $this->lastName = $row['lastName'];
+                    $this->first_name = $row['first_name'];
+                    $this->last_name = $row['last_name'];
                     $this->isAdmin = $row['isAdmin'];
-                    $this->id = $row['id'];
+                    $this->user_type = $row['user_type'];
+                    $this->attempt = $attempt;
+                    $this->uid = $row['uid'];
                     session_start();
                     $_SESSION["login_user"] = $this;
                     $_SESSION["time_out"] = time() + TIME_OUT;
@@ -109,7 +125,7 @@
                 }
        
                //UPDATE [table_name] SET [column_name] = new_value, [col2_name] =new_value2 WHERE condition
-               $updateCmd = "UPDATE user_tb SET attempt = $attempt WHERE id = ".$row['id'];
+               $updateCmd = "UPDATE user_tb SET attempt = $attempt WHERE id = ".$row['uid'];
                $dbCon->query($updateCmd);
                $dbObj->db_close();
 
@@ -159,9 +175,9 @@
 
         function display_info(){
             return json_encode([
-                'id' => $this->id,
-                'firstName' => $this->firstName,
-                'lastName' => $this->lastName,
+                'uid' => $this->uid,
+                'first_name' => $this->first_name,
+                'last_name' => $this->last_name,
                 'email' => $this->email
             ]);
         }     

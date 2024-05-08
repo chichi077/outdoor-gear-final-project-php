@@ -12,22 +12,50 @@ export default function ProductsComponent() {
 	const [products, setProducts] = useState([]);
 
 	// State to store the selected category
-	const [category, setCategory] = useState('all');
+	const [options, setOptions] = useState([]);
+
+	const settingOptions = () => {
+		fetch('http://localhost/webdev6/outdoor_backend/load.php/loadCategory')
+			.then(response => response.json())
+			.then(data => {
+				setOptions(data);
+			})
+			.catch(error => {
+				console.error('Error:', error);
+			});
+	}
+
+	const settingProducts = (categoryId) => {
+		console.log(categoryId);
+		fetch(`http://localhost/webdev6/outdoor_backend/load.php/loadProducts?cid=${categoryId}`)
+        .then(response => response.json())
+        .then(data => {
+            setProducts(data);
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+	}
 
 	useEffect(() => {
+		settingOptions();
+		settingProducts(0);
+	}, []);
+
+	// Function to handle the category change
+	const onChange = (evt) => {
+		const newCategory = evt.target.value;
+		settingOptions(newCategory);
+
 		// If the category is 'all', display all products
-		if (category === 'all') {
-			setProducts(storage.products);
+		if (newCategory === 0) {
+			settingProducts(0);
 			return;
 		}
 
 		// Display products based on the selected category
-		setProducts(storage.perCategory.get(category));
-	}, [category, storage.products, storage.perCategory]);
-
-	// Function to handle the category change
-	const onChange = (evt) => {
-		setCategory(evt.target.value);
+		settingProducts(newCategory);
 	};
 
 	return (
@@ -41,16 +69,16 @@ export default function ProductsComponent() {
 						width: '200px',
 					}}
 				>
-					<option value="all">{t('products.categories.all')}</option>
-					{[...storage.perCategory.keys()].map((selectCategory) => (
-						<option key={selectCategory} value={selectCategory}>
-							{t(`products.categories.${selectCategory}`)}
+					<option value="0">all</option>
+					{options.map((option, index) => (
+						<option key={index} value={option.cid}>
+							{option.cname}
 						</option>
 					))}
 				</select>
 			</div>
 			<div className="d-flex flex-wrap justify-content-center gap-3">
-				{storage?.products?.length > 0 && products.map((product) => <ProductCard key={product.id} product={product} />)}
+				{products?.length > 0 && products.map((product) => <ProductCard key={product.pid} product={product} />)}
 			</div>
 		</div>
 	);

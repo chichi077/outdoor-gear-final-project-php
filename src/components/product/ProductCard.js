@@ -17,10 +17,10 @@ export function ProductCard({ product, onChange, onRemove }) {
 		storage.cart.addToCart(product);
 	};
 
-	const { name, description } = useMemo(
-		() => (selectedLanguage === 'en' ? product : product.i18n[selectedLanguage]),
-		[selectedLanguage, product],
-	);
+	// const { name, description } = useMemo(
+	// 	() => (selectedLanguage === 'en' ? product : product.i18n[selectedLanguage]),
+	// 	[selectedLanguage, product],
+	// );
 
 	const onInputChange = (evt) => {
 		const { value } = evt.target;
@@ -51,7 +51,7 @@ export function ProductCard({ product, onChange, onRemove }) {
 			<img
 				alt={name}
 				className="card-img-top"
-				src={product.image}
+				src={product.img_addr}
 				style={{
 					height: '200px',
 					objectFit: 'cover',
@@ -59,10 +59,10 @@ export function ProductCard({ product, onChange, onRemove }) {
 			/>
 			<div className="card-body">
 				<h3 className="card-title d-flex justify-content-between align-items-center">
-					{name}
-					{product?.model && <Cube size={18} weight="bold" />}
+					{product.pname}
+					{/* {product?.model && <Cube size={18} weight="bold" />} */}
 				</h3>
-				<p className="card-text">{description}</p>
+				<p className="card-text">{product.description}</p>
 				{product?.quantity && (
 					<input
 						className="form-control"

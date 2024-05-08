@@ -92,7 +92,7 @@ export function ProductRegisterPage() {
                                 </div>
                                 <div className="col-md-9 pe-5">
 
-                                    <input className="form-control form-control-lg" name="price" placeholder="Price" type="number" />
+                                    <input className="form-control form-control-lg" name="price" placeholder="Price" step="0.1" type="number" />
                                 </div>
 
                             </div>

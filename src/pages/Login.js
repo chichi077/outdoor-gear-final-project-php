@@ -27,7 +27,7 @@ export default function Login() {
 	const submitHandler = async (evt) => {
 		evt.preventDefault();
 		try {
-			const response = await axios.post('http://localhost/outdoor-gear-final-project%20(php)/Login.php', {
+			const response = await axios.post('http://localhost/outdoor-gear-final-project%20(php)/src/php/classSolution.php', {
 				email: loginUser.email,
 				password: loginUser.password
 			}, {

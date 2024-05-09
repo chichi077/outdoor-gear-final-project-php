@@ -1,4 +1,4 @@
-import axios from 'axios';
+// import axios from 'axios';
 import React, { useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { GlobalDataStorage } from '../constants';
@@ -24,37 +24,49 @@ export default function Login() {
 		});
 	};
 
-	const submitHandler = async (evt) => {
+	const submitHandler = (evt) => {
 		evt.preventDefault();
-		try {
-			const response = await axios.post('http://localhost/outdoor-gear-final-project%20(php)/src/php/classSolution.php', {
-				email: loginUser.email,
-				password: loginUser.password
-			}, {
-				headers: {
-					'Content-Type': 'application/json'
-				}
-			});
-			console.log(response.data);
-			// Handle the response from the backend
-			if (response.data.message === "Login successful.") {
-				setUser(loginUser);
-				// Use the storage here, for example:
-				storage.set('user', loginUser);
-				// const matchingUser = storage.users.get(loginUser.email);
-				// console.log(matchingUser);
+		const matchingUser = storage.users.get(loginUser.email);
+		console.log(matchingUser);
 
-				// if (matchingUser && matchingUser.passwordMatches(loginUser.password)) {
-				// 	setUser(matchingUser);
-			} else {
-				// Set an error message if login fails
-				setError('Invalid email or password. Please try again.');
-			}
-		} catch (_error) {
-			setError('Login failed, please try again.');
-			console.error('Error:', _error);
+		if (matchingUser && matchingUser.passwordMatches(loginUser.password)) {
+			setUser(matchingUser);
+		} else {
+			// Set an error message if login fails
+			setError('Invalid email or password. Please try again.');
 		}
 	};
+	// const submitHandler = async (evt) => {
+	// 	evt.preventDefault();
+	// 	try {
+	// 		const response = await axios.post('http://localhost/outdoor-gear-final-project%20(php)/src/php/classSolution.php', {
+	// 			email: loginUser.email,
+	// 			password: loginUser.password
+	// 		}, {
+	// 			headers: {
+	// 				'Content-Type': 'application/json'
+	// 			}
+	// 		});
+	// 		console.log(response.data);
+	// 		// Handle the response from the backend
+	// 		if (response.data.message === "Login successful.") {
+	// 			setUser(loginUser);
+	// 			// Use the storage here, for example:
+	// 			storage.set('user', loginUser);
+	// 			// const matchingUser = storage.users.get(loginUser.email);
+	// 			// console.log(matchingUser);
+
+	// 			// if (matchingUser && matchingUser.passwordMatches(loginUser.password)) {
+	// 			// 	setUser(matchingUser);
+	// 		} else {
+	// 			// Set an error message if login fails
+	// 			setError('Invalid email or password. Please try again.');
+	// 		}
+	// 	} catch (_error) {
+	// 		setError('Login failed, please try again.');
+	// 		console.error('Error:', _error);
+	// 	}
+	// };
 
 	return (
 		<div className="App">

@@ -1,19 +1,7 @@
 <?php
-// Allow requests from any origin - not recommended for production
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type, X-Requested-With, Authorization');
-header('Access-Control-Allow-Credentials: true');
-// Respond to preflight requests
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    // Should return HTTP 200 status code
-    http_response_code(200);
-    exit;
-}
-
-//    require("./config.php");
-   require("./function.php");
-
+require("./function.php");
+require("./config.php");
+//    require("./Enc.php");
    
     class File{
         private $src_addr;
@@ -69,16 +57,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
             $this->writeFile($fileName,json_encode($prevData),true);
         }
     }
-    //book system
     class User {
         private $uid;
         private $first_name;
         private $last_name;
         private $email;
-        private $isAdmin;
         private $user_type;
-        private $attempt;
-        
 
         function __construct($email)
         {
@@ -87,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
          
         }
 
-        function authenticate($pass){
+        function authenticate($password){
             $dbObj = new DB(DB_SERVER_NAME,DB_USER_NAME,DB_PASSWORD,DB_NAME);
             $dbCon=$dbObj->connect();
             $selectCom = "SELECT * FROM user_tb WHERE email='".$this->email."'";
@@ -103,14 +87,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
                     Audit_generator("login","failed","User account locked.",$this->email);
                     throw new Exception("There is a problem logging in, please contact the system admin.",401);
                 }
-                if(password_verify($pass,$row['pass'])){
+                if(password_verify($password,$row['password'])){
                     $loginFlag = true;
                     $attempt =5;
                     $this->first_name = $row['first_name'];
                     $this->last_name = $row['last_name'];
-                    $this->isAdmin = $row['isAdmin'];
-                    $this->user_type = $row['user_type'];
-                    $this->attempt = $attempt;
                     $this->uid = $row['uid'];
                     session_start();
                     $_SESSION["login_user"] = $this;
@@ -125,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
                 }
        
                //UPDATE [table_name] SET [column_name] = new_value, [col2_name] =new_value2 WHERE condition
-               $updateCmd = "UPDATE user_tb SET attempt = $attempt WHERE id = ".$row['uid'];
+               $updateCmd = "UPDATE user_tb SET attempt = $attempt WHERE uid = ".$row['uid'];
                $dbCon->query($updateCmd);
                $dbObj->db_close();
 
@@ -176,11 +157,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
         function display_info(){
             return json_encode([
                 'uid' => $this->uid,
-                'first_name' => $this->first_name,
+                'first_name	' => $this->first_name	,
                 'last_name' => $this->last_name,
                 'email' => $this->email
             ]);
-        }     
+        }
+
+
+      
 
     }
     class DB {
@@ -210,38 +194,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
         function db_close(){
             $this->db_connect->close();
         }
-
+    }
        
-        // Insert into table_name (col_name,col_name, ...) VALUES (val_1,val_2, ...)
-        function insert($table_name, $col_names=null, $values_array)
-        {
-            // $values is going to be an array of values
-            // $col_names is going to be an array of column names
+    //     // Insert into table_name (col_name,col_name, ...) VALUES (val_1,val_2, ...)
+    //     function insert($table_name, $col_names=null, $values_array)
+    //     {
+    //         // $values is going to be an array of values
+    //         // $col_names is going to be an array of column names
 
-           if ($col_names != null){
-                $fields = "(".implode(",",$col_names).")"; // ['fname','lname']
-           } else{
-                $fields = "";
-              }
-                $values = "(".implode(",",$values_array).")"; // ['fname','lname']
-                $inserCmd = "INSERT INTO $table_name $fields VALUES $values";
+    //        if ($col_names != null){
+    //             $fields = "(".implode(",",$col_names).")"; // ['fname','lname']
+    //        } else{
+    //             $fields = "";
+    //           }
+    //             $values = "(".implode(",",$values_array).")"; // ['fname','lname']
+    //             $inserCmd = "INSERT INTO $table_name $fields VALUES $values";
                 
 
-                // $inserCmd = $this->db_connect->prepare("INSERT INTO $table_name $fields VALUES (?,?,?,?)");
-                // $inserCmd->bind_param("sssds", $values_array[0], $values_array[1], $values_array[2], $values_array[3]);
+    //             // $inserCmd = $this->db_connect->prepare("INSERT INTO $table_name $fields VALUES (?,?,?,?)");
+    //             // $inserCmd->bind_param("sssds", $values_array[0], $values_array[1], $values_array[2], $values_array[3]);
 
-                if ($this->db_connect->query($inserCmd) === TRUE) {
-                 return true;
-                } else {
+    //             if ($this->db_connect->query($inserCmd) === TRUE) {
+    //              return true;
+    //             } else {
 
-                    throw new Exception("Insert data error",500);
+    //                 throw new Exception("Insert data error",500);
 
-                }
+    //             }
                 
-           }            
+    //        }            
 
         
-    }
+    // }
     // class fileUpload{
     //     private $srcFile;
     //     private $destAddr;
@@ -288,5 +272,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     //         ($this->destAddr,2);
     //         return $destAddr;
     //     }
-    // }
-?>
+    
+    ?>

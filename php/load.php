@@ -35,8 +35,8 @@ try {
 
             $db_obj = new db(DB_SERVER_NAME, DB_USER_NAME, DB_PASSWORD, DB_NAME);
             $dbCon = $db_obj->connect();
-            $insertCmd = $dbCon->prepare("INSERT INTO product_tb (pname, category_id, price, description) VALUES (?,?,?,?)");
-            $insertCmd->bind_param("sids", $_POST["pname"], $_POST["category_id"], $_POST["price"],  $_POST["description"],);
+            $insertCmd = $dbCon->prepare("INSERT INTO product_tb (pname, category_id, price, desc) VALUES (?,?,?,?)");
+            $insertCmd->bind_param("sids", $_POST["pname"], $_POST["category_id"], $_POST["price"],  $_POST["desc"],);
 
 
             if ($insertCmd->execute()) {
@@ -66,7 +66,7 @@ try {
         case "/loadProducts":
             $db_obj = new db(DB_SERVER_NAME, DB_USER_NAME, DB_PASSWORD, DB_NAME);
             $dbCon = $db_obj->connect();
-            $selectCmd = "SELECT pro.pid as pid, pname, description, price, img_addr
+            $selectCmd = "SELECT pro.pid as pid, pname, desc, price, img_addr
                             FROM product_tb pro
                             LEFT JOIN category_tb cat ON pro.category_id = cat.cid
                             LEFT JOIN product_img_tb pimg ON pimg.pid = pro.pid

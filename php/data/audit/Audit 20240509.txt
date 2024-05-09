@@ -22,3 +22,9 @@
 2024-05-09 10:18:23 ::1:56343 test101@test100.com login success User login via password. 
 2024-05-09 10:19:10 ::1:56402 test101@test100.com login success User login via password. 
 2024-05-09 10:20:01 ::1:56477 test101@test100.com login success User login via password. 
+2024-05-09 10:35:54 ::1:57247 admin@mail.com registeration success User registered. 
+2024-05-09 10:36:17 ::1:57290 admin@mail.com login success User login via password. 
+2024-05-09 10:37:19 ::1:57519 user@mail.com registeration success User registered. 
+2024-05-09 10:39:12 ::1:57735 admin@mail.com login success User login via password. 
+2024-05-09 10:58:53 ::1:59014 admin@mail.com login success User login via password. 
+2024-05-09 10:59:31 ::1:59058 admin@mail.com login success User login via password. 

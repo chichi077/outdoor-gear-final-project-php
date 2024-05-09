@@ -27,9 +27,10 @@ export function useAuthUser() {
 				return;
 			}
 
-			encryptionController.setLocalStorageItem(AUTH_USER_LOCAL_STORAGE_KEY, JSON.stringify({
-				sessionId: user
-			}));
+			// encryptionController.setLocalStorageItem(AUTH_USER_LOCAL_STORAGE_KEY, JSON.stringify({
+			// 	sessionId: user
+			// }));
+			encryptionController.setLocalStorageItem(AUTH_USER_LOCAL_STORAGE_KEY, JSON.stringify(user));
 			setAuthUser(user);
 			// .cart.loadFromLocalStorage(user);
 		},

@@ -76,7 +76,7 @@ export function UserRegisterPage() {
                             </div>
                             <div className="px-5 py-4">
                                 <button type="submit" >
-                                    Create Product
+                                    Sign Up
                                 </button>
                             </div>
                         </form>

@@ -30,16 +30,16 @@ export default function Login() {
 			method: 'POST',
 			body: regData,
 		})
-			.then(async response => {
-				if (response.status === 200) {
-					
-					const body = await response.text();
-					console.log(loginUser);
-					setUser(loginUser);
-					window.location.href = '/';
-				}
+
+			.then(response => response.json())
+			.then(data => {
+
+				console.log(data);
+				setUser(data);
+				window.location.href = '/';
+
 			})
-			.catch((_error) => {
+			.catch(_error => {
 				setError('Login failed, please try again.');
 				console.error('Error:', _error);
 			});
@@ -85,7 +85,7 @@ export default function Login() {
 						}}
 						type="button"
 					>
-						Sign Up
+						Sign In
 					</button>
 				</div>
 			</div>

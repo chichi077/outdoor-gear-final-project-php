@@ -107,8 +107,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
                     $attempt = 5;
                     $this->fname = $row["first_name"];
                     $this->lname = $row["last_name"];
-                    // $this->user_type = $user_typeDB;    //$this->user_type is already converted to lowercase
-                    // $this->id = $row["uid"];
+                    $this->isAdmin = $row["isAdmin"];
+                    
                     session_start();
                     $_SESSION["login_user"] = $this;
                     $_SESSION["time_out"] = time() + TIME_OUT;
@@ -117,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
                     $attempt -= 1;
                     $loginFlag = "pass";
                 }
-                // to update  "UPDATE [table name] SET [col_name] = new_value, WHERE condition"
+                
                 $updateCmd = "UPDATE user_tb SET attempt = $attempt WHERE uid=".$row["uid"];
                 $dbCon ->query($updateCmd);
                 $dbObj->db_close();
@@ -129,15 +129,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
                 switch($loginFlag){ //if failed to login 
                     case "email":
                         Audit_generator("login","failed","Invalid email address.",$this->email);
-                        throw new Exception("Username/Password Wrong.",401);
+                        throw new Exception("Email/Password Wrong.",401);
                     case "pass":
-                        echo $pass."-------";
-                        echo $row["password"]."-------";
                         Audit_generator("login","failed","Invalid password. Attempts(".$attempt.")",$attempt);
-                        throw new Exception("Username/Password Wrong.",401);
+                        throw new Exception("Email/Password Wrong.",401);
                 } 
             }
-            return session_id();
+            $loginResult = json_encode(['sessionId' => session_id(), 'isAdmin' => $this->isAdmin]);
+            return $loginResult;
         }
 
 

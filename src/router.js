@@ -80,12 +80,6 @@ export const router = createBrowserRouter([
 	{
 		path: '/userRegister',
 		element: (
-			// <AdminGuard>
-			// 	<LayoutWrapper titleKey="pages.register">
-			// 		<ProductRegisterPage />
-			// 	</LayoutWrapper>
-			// </AdminGuard >
-
 			<LayoutWrapper titleKey="User Registration Form">
 				<UserRegisterPage />
 			</LayoutWrapper>

@@ -10,17 +10,17 @@ export function ProductRegisterPage() {
     const submitHandler = (evt) => {
         evt.preventDefault();
         const regData = new FormData(evt.target);
-
-        fetch('http://localhost/webdev6/outdoor_backend/load.php/regProduct', {
+        console.log(regData);
+        fetch('http://localhost/outdoor-gear-final-project%20(php)/php/load.php/regProduct', {
             method: 'POST',
             body: regData,
         })
             .then(response => {
                 if (response.status === 201) {
-                    console.log("Success");
-                    if (window.confirm("Product Registered! Do you want to move to product page?")) {
+                    if (window.confirm("Product registered successfully! Would you like to proceed to the product page?")) {
                         navigate('/products');
                     } else {
+                        navigate('/products');
                     }
                 }
             })
@@ -30,7 +30,7 @@ export function ProductRegisterPage() {
     };
 
     const settingOptions = () => {
-        fetch('http://localhost/webdev6/outdoor_backend/load.php/loadCategory')
+        fetch('http://localhost/outdoor-gear-final-project%20(php)/php/load.php/loadCategory')
             .then(response => response.json())
             .then(data => {
                 setOptions(data);
@@ -92,7 +92,7 @@ export function ProductRegisterPage() {
                                 </div>
                                 <div className="col-md-9 pe-5">
 
-                                    <input className="form-control form-control-lg" name="price" placeholder="Price" step="0.1" type="number" />
+                                    <input className="form-control form-control-lg" name="price" placeholder="Price" step="0.01" type="number" />
                                 </div>
 
                             </div>

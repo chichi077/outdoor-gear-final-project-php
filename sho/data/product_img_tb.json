@@ -1,0 +1,158 @@
+[
+    {
+        "type": "header",
+        "version": "5.2.1",
+        "comment": "Export to JSON plugin for PHPMyAdmin"
+    },
+    {
+        "type": "database",
+        "name": "outdoor_db"
+    },
+    {
+        "type": "table",
+        "name": "product_img_tb",
+        "database": "outdoor_db",
+        "data": [
+            {
+                "p_img_id": "1",
+                "pid": "1",
+                "img_addr": "\/images\/tent1.jpeg"
+            },
+            {
+                "p_img_id": "2",
+                "pid": "2",
+                "img_addr": "\/images\/tent2.jpeg"
+            },
+            {
+                "p_img_id": "3",
+                "pid": "3",
+                "img_addr": "\/images\/tent3.jpeg"
+            },
+            {
+                "p_img_id": "4",
+                "pid": "4",
+                "img_addr": "\/images\/tent4.jpeg"
+            },
+            {
+                "p_img_id": "5",
+                "pid": "5",
+                "img_addr": "\/images\/backpack1.jpeg"
+            },
+            {
+                "p_img_id": "6",
+                "pid": "6",
+                "img_addr": "\/images\/backpack2.jpeg"
+            },
+            {
+                "p_img_id": "7",
+                "pid": "7",
+                "img_addr": "\/images\/backpack4.jpeg"
+            },
+            {
+                "p_img_id": "8",
+                "pid": "8",
+                "img_addr": "\/images\/camping-chair1.webp"
+            },
+            {
+                "p_img_id": "9",
+                "pid": "9",
+                "img_addr": "\/images\/camping-chair2.jpeg"
+            },
+            {
+                "p_img_id": "10",
+                "pid": "10",
+                "img_addr": "\/images\/camping-table1.jpg"
+            },
+            {
+                "p_img_id": "11",
+                "pid": "11",
+                "img_addr": "\/images\/cooler1.jpeg"
+            },
+            {
+                "p_img_id": "12",
+                "pid": "12",
+                "img_addr": "\/images\/cooler2.webp"
+            },
+            {
+                "p_img_id": "13",
+                "pid": "13",
+                "img_addr": "\/images\/matches.jpeg"
+            },
+            {
+                "p_img_id": "14",
+                "pid": "14",
+                "img_addr": "\/images\/rope.jpeg"
+            },
+            {
+                "p_img_id": "15",
+                "pid": "15",
+                "img_addr": "\/images\/knife1.jpeg"
+            },
+            {
+                "p_img_id": "16",
+                "pid": "16",
+                "img_addr": "\/images\/knife2.jpeg"
+            },
+            {
+                "p_img_id": "17",
+                "pid": "17",
+                "img_addr": "images\/flare.jpeg"
+            },
+            {
+                "p_img_id": "18",
+                "pid": "18",
+                "img_addr": "\/images\/flashlight1.jpeg"
+            },
+            {
+                "p_img_id": "19",
+                "pid": "19",
+                "img_addr": "\/images\/flashlight2.avif"
+            },
+            {
+                "p_img_id": "20",
+                "pid": "20",
+                "img_addr": "\/images\/bottle1.webp"
+            },
+            {
+                "p_img_id": "21",
+                "pid": "21",
+                "img_addr": "\/images\/bottle2.webp"
+            },
+            {
+                "p_img_id": "22",
+                "pid": "22",
+                "img_addr": "\/images\/kit1.jpeg"
+            },
+            {
+                "p_img_id": "23",
+                "pid": "23",
+                "img_addr": "\/images\/kit2.jpeg"
+            },
+            {
+                "p_img_id": "24",
+                "pid": "24",
+                "img_addr": "\/images\/kit3.jpeg"
+            },
+            {
+                "p_img_id": "25",
+                "pid": "25",
+                "img_addr": "\/images\/lighter1.jpeg"
+            },
+            {
+                "p_img_id": "26",
+                "pid": "26",
+                "img_addr": "\/images\/shoes2.jpeg"
+            },
+            {
+                "p_img_id": "27",
+                "pid": "27",
+                "img_addr": "\/images\/stove1.jpeg"
+            },
+            {
+                "p_img_id": "28",
+                "pid": "28",
+                "img_addr": "\/images\/stove2.jpeg"
+            }
+        ]
+    }
+]

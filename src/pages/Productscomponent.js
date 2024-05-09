@@ -15,7 +15,7 @@ export default function ProductsComponent() {
 	const [options, setOptions] = useState([]);
 
 	const settingOptions = () => {
-		fetch('http://localhost/webdev6/outdoor_backend/load.php/loadCategory')
+		fetch('http://localhost/outdoor-gear-final-project%20(php)/php/load.php/loadCategory')
 			.then(response => response.json())
 			.then(data => {
 				setOptions(data);
@@ -27,15 +27,15 @@ export default function ProductsComponent() {
 
 	const settingProducts = (categoryId) => {
 		console.log(categoryId);
-		fetch(`http://localhost/webdev6/outdoor_backend/load.php/loadProducts?cid=${categoryId}`)
-        .then(response => response.json())
-        .then(data => {
-            setProducts(data);
-            console.log(data);
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+		fetch(`http://localhost/outdoor-gear-final-project%20(php)/php/load.php/loadProducts?cid=${categoryId}`)
+			.then(response => response.json())
+			.then(data => {
+				setProducts(data);
+				console.log(data);
+			})
+			.catch(error => {
+				console.error('Error:', error);
+			});
 	}
 
 	useEffect(() => {

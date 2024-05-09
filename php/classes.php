@@ -283,9 +283,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
             if(!move_uploaded_file($this->srcFile['tmp_name'],$this->destAddr)){
                 throw new Exception("File to upload.",500);
             }
-            $destAddr = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["SERVER_ADDR"].substr
-            ($_SERVER["SCRIPT_NAME"],0,stripos($_SERVER["SCRIPT_NAME"],"index.php")).substr
-            ($this->destAddr,2);
+            $destAddr = "/images/".$this->srcFile["name"];
             return $destAddr;
         }
     }

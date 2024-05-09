@@ -1,7 +1,7 @@
 <?php
 
 include("./config.php");
-include("./Classes.php");
+include("./classes.php");
 //include("./Functions.php");
 
 header("Access-Control-Allow-Origin:http://localhost:3000");
@@ -30,7 +30,7 @@ try {
             $jsonData = file_get_contents('php://input');
             $data = json_decode($jsonData, true);
 
-            $fileUpload = new fileUpload($_FILES["image"], "./data/productsImg", 400000);
+            $fileUpload = new fileUpload($_FILES["image"], "../public/images", 400000);
             $fileAddress = $fileUpload->commitUpload();
 
             $db_obj = new db(DB_SERVER_NAME, DB_USER_NAME, DB_PASSWORD, DB_NAME);
@@ -51,7 +51,7 @@ try {
                     $insertCmdImg = $dbCon->prepare("INSERT INTO product_img_tb ( img_addr, pid) VALUES (?, ?)");
                     $insertCmdImg->bind_param("si", $fileAddress, $pid);
                     if ($insertCmdImg->execute()) {
-                        sendHttp_Code(201, "Product added");
+                        sendHttpCode(201, "Product added");
                     } else {
                         throw new Exception("Product not stored");
                     }
@@ -87,6 +87,6 @@ try {
             break;
     }
 } catch (Exception $err) {
-    sendHttp_Code($err->getCode(), $err->getMessage());
+    sendHttpCode($err->getCode(), $err->getMessage());
     echo $err->getMessage();
 }

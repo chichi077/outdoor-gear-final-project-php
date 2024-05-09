@@ -11,8 +11,10 @@ import Login from './pages/Login';
 import ProductsComponent from './pages/Productscomponent';
 import Environmental from './pages/about/Environmental';
 import AdminPage from './pages/admin/AdminPage';
+import { UserRegisterPage } from './pages/admin/UserRegister';
 import { ProductPage } from './pages/product/Page';
 import { ProductRegisterPage } from './pages/product/Register';
+
 
 export const router = createBrowserRouter([
 	{
@@ -68,14 +70,24 @@ export const router = createBrowserRouter([
 	{
 		path: '/register',
 		element: (
+			<AdminGuard>
+				<LayoutWrapper titleKey="Product Registration Form">
+					<ProductRegisterPage />
+				</LayoutWrapper>
+			</AdminGuard >
+		),
+	},
+	{
+		path: '/userRegister',
+		element: (
 			// <AdminGuard>
 			// 	<LayoutWrapper titleKey="pages.register">
 			// 		<ProductRegisterPage />
 			// 	</LayoutWrapper>
 			// </AdminGuard >
 
-			<LayoutWrapper titleKey="Product Registration Form">
-			 		<ProductRegisterPage />
+			<LayoutWrapper titleKey="User Registration Form">
+				<UserRegisterPage />
 			</LayoutWrapper>
 		),
 	},

@@ -1,7 +1,6 @@
-import axios from 'axios';
-import React, { useContext, useState } from 'react';
+
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { GlobalDataStorage } from '../constants';
 import { useAlerts } from '../hooks/useAlerts';
 import { useAuthUser } from '../hooks/useAuthUser';
 import './Login.css';
@@ -10,7 +9,6 @@ export default function Login() {
 	const { setUser } = useAuthUser();
 	const { t } = useTranslation();
 	const { addAlert } = useAlerts();
-	const storage = useContext(GlobalDataStorage);
 
 	// Define loginUser state to hold the email and password
 	const [loginUser, setLoginUser] = useState({ email: '', password: '' });
@@ -26,34 +24,25 @@ export default function Login() {
 
 	const submitHandler = async (evt) => {
 		evt.preventDefault();
-		try {
-			const response = await axios.post('http://localhost/outdoor-gear-final-project%20(php)/src/php/classSolution.php', {
-				email: loginUser.email,
-				password: loginUser.password
-			}, {
-				headers: {
-					'Content-Type': 'application/json'
+		const regData = new FormData(evt.target);
+		console.log(regData);
+		fetch('http://localhost/outdoor-gear-final-project%20(php)/php/classSolution.php/login', {
+			method: 'POST',
+			body: regData,
+		})
+			.then(async response => {
+				if (response.status === 200) {
+					
+					const body = await response.text();
+					console.log(loginUser);
+					setUser(loginUser);
+					window.location.href = '/';
 				}
+			})
+			.catch((_error) => {
+				setError('Login failed, please try again.');
+				console.error('Error:', _error);
 			});
-			console.log(response.data);
-			// Handle the response from the backend
-			if (response.data.message === "Login successful.") {
-				setUser(loginUser);
-				// Use the storage here, for example:
-				storage.set('user', loginUser);
-				// const matchingUser = storage.users.get(loginUser.email);
-				// console.log(matchingUser);
-
-				// if (matchingUser && matchingUser.passwordMatches(loginUser.password)) {
-				// 	setUser(matchingUser);
-			} else {
-				// Set an error message if login fails
-				setError('Invalid email or password. Please try again.');
-			}
-		} catch (_error) {
-			setError('Login failed, please try again.');
-			console.error('Error:', _error);
-		}
 	};
 
 	return (

@@ -55,7 +55,7 @@ export function ProductRegisterPage() {
                 <div className="row d-flex justify-content-center align-items-center h-100">
                     <div className="col-xl-9">
 
-                        <h1 className="text-black mb-4">Register Product</h1>
+                        <h1 className="text-black mb-4">Add New Product</h1>
 
                         <form onSubmit={submitHandler}>
                             <div className="row align-items-center pt-4 pb-3">

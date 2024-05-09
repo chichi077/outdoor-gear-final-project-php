@@ -23,13 +23,15 @@ export function useAuthUser() {
 			if (!user) {
 				encryptionController.removeLocalStorageItem(AUTH_USER_LOCAL_STORAGE_KEY);
 				setAuthUser(null);
-				storage.cart.resetCart();
+				// storage.cart.resetCart();
 				return;
 			}
 
-			encryptionController.setLocalStorageItem(AUTH_USER_LOCAL_STORAGE_KEY, JSON.stringify(user.toJSON()));
+			encryptionController.setLocalStorageItem(AUTH_USER_LOCAL_STORAGE_KEY, JSON.stringify({
+				sessionId: user
+			}));
 			setAuthUser(user);
-			storage.cart.loadFromLocalStorage(user);
+			// .cart.loadFromLocalStorage(user);
 		},
 	};
 }

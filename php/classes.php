@@ -95,30 +95,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
             $attempt = null;
             if($result->num_rows > 0){ 
                 $row = $result->fetch_assoc();
-                // switch($row["user_type"]){
-                //     case 1:
-                //         $user_typeDB = "staff";
-                //     break;
-                //     case 2:
-                //         $user_typeDB = "customer";
-                //     break;
-                //     case 3:
-                //         $user_typeDB ="admin";
-                //     break;
-                //     default:
-                //         throw new Exception("Some trouble about user_type on DataBase");
-                // }
+               
                 $attempt = $row["attempt"];
                 if($row["attempt"] == 0) {
                     Audit_generator("login","failed","User account locked.",$this->email);
                     throw new Exception("There is a problem logging in, please contact the system admin.",401);
                 }
 
-                if($pass == $row["password"]){
+                if(password_verify($pass ,$row["password"])){
                     $loginFlag = true;
                     $attempt = 5;
-                    $this->fname = $row["fname"];
-                    $this->lname = $row["lname"];
+                    $this->fname = $row["first_name"];
+                    $this->lname = $row["last_name"];
                     // $this->user_type = $user_typeDB;    //$this->user_type is already converted to lowercase
                     // $this->id = $row["uid"];
                     session_start();

@@ -14,7 +14,7 @@
         switch($_SERVER["PATH_INFO"]){
             case "/reg":
                 check_key(["fname", "lname", "email", "password","user_type"], $_POST);
-                $dbobj = new DB(DB_SERVER_NAME, DB_USER, DB_PASSWORD, DB_NAME);
+                $dbobj = new DB(DB_SERVER_NAME, DB_USER_NAME, DB_PASSWORD, DB_NAME);
                 $dbCon = $dbobj->connect();
                 $selectCmd = "SELECT email FROM user_tb WHERE email='".$_POST["email"]."'";
                 $result = $dbCon->query($selectCmd);
@@ -24,19 +24,19 @@
                     $_POST["email"]);
                     throw new Exception("Registeration Failed", 406);
                 }
-                switch(strtolower($_POST["user_type"])){
-                    case "staff":
-                        $user_type = 1;
-                    break;
-                    case "customer":
-                        $user_type = 2;
-                    break;
-                    case "admin":
-                        $user_type = 3;
-                    break;
-                    default:
-                        throw new Exception("Invalid user_type choose from 'staff', 'customer', 'admin'",406);
-                }
+                // switch(strtolower($_POST["user_type"])){
+                //     case "staff":
+                //         $user_type = 1;
+                //     break;
+                //     case "customer":
+                //         $user_type = 2;
+                //     break;
+                //     case "admin":
+                //         $user_type = 3;
+                //     break;
+                //     default:
+                //         throw new Exception("Invalid user_type choose from 'staff', 'customer', 'admin'",406);
+                // }
                 
                 $password = password_hash($_POST["password"], PASSWORD_BCRYPT, ["cost"=>10]);   //hash and salt
                 $insertCmd =$dbCon->prepare("INSERT INTO user_tb (fname, lname, email, password, user_type) VALUES (?,?,?,?,?)");

@@ -14,12 +14,12 @@
         switch($_SERVER["PATH_INFO"]){
             case "/reg":
                 check_key(["fname", "lname", "email", "password","user_type"], $_POST);
-                $db_obj = new DB(DB_SERVER_NAME, DB_USER, DB_PASSWORD, DB_NAME);
-                $dbCon = $db_obj->connect();
+                $dbobj = new DB(DB_SERVER_NAME, DB_USER, DB_PASSWORD, DB_NAME);
+                $dbCon = $dbobj->connect();
                 $selectCmd = "SELECT email FROM user_tb WHERE email='".$_POST["email"]."'";
                 $result = $dbCon->query($selectCmd);
                 if($result->num_rows > 0) {
-                    $dbObj->db_close();
+                    $dbobj->db_close();
                     Audit_generator("Registeration", "Failed", "User email already exsits.",
                     $_POST["email"]);
                     throw new Exception("Registeration Failed", 406);
@@ -48,9 +48,10 @@
             break;
             case "/login":
                 check_key(["email", "password"],$_POST);    //check is correct or not
-                $userObj = new User($_POST["email"]);   //use __construct() and initialized objects
+                $userObj = new User($_POST["email"]); //use __construct() and initialized objects
                 echo $userObj->authenticate($_POST["password"]);
             break;
+            case "/logout";
             case "/info":
                 if(session_status()===PHP_SESSION_NONE) throw new Exception("Forbiden request.",401);   //session_status() show session is active or not. PHP_SESSION_NONE means session is unactive
                 echo($_SESSION["login_user"]->display_info());  //change to json file and return

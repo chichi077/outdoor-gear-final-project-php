@@ -30,14 +30,19 @@ export default function Login() {
 			method: 'POST',
 			body: regData,
 		})
-
-			.then(response => response.json())
+			.then(response => {
+				if (response.status === 200) {
+					return response.json();
+				} else if (response.status === 406) {
+					throw new Error('User account locked.');
+				} else {
+					throw new Error('Login failed, please try again.');
+				}
+			})
 			.then(data => {
-
 				console.log(data);
 				setUser(data);
 				window.location.href = '/';
-
 			})
 			.catch(_error => {
 				setError('Login failed, please try again.');

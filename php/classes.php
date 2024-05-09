@@ -99,6 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
                 $attempt = $row["attempt"];
                 if($row["attempt"] == 0) {
                     Audit_generator("login","failed","User account locked.",$this->email);
+                    sendHttpCode(406, "User account locked");
                     throw new Exception("There is a problem logging in, please contact the system admin.",401);
                 }
 

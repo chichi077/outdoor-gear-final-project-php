@@ -1,8 +1,6 @@
 <?php
-// require("./config.php");
-require("./Functions.php");
-require("./Enc.php");
-
+    require("./config.php");
+    require("./Function.php");
 
     class File{
         private $src_addr;
@@ -123,6 +121,10 @@ require("./Enc.php");
             return json_encode(["uid"=>$this->id, "fname"=>$this->fname, "lname"=>$this->lname,"email"=>$this->email]);
         }
     }
+
+
+    
+    
     class DB {
         private $db_hostname;
         private $db_userName;

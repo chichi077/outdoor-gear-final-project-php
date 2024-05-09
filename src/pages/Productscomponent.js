@@ -1,12 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ProductCard } from '../components/product/ProductCard';
-import { GlobalDataStorage } from '../constants';
 import './Products.css';
 
 export default function ProductsComponent() {
 	const { t } = useTranslation();
-	const storage = useContext(GlobalDataStorage);
+	// const storage = useContext(GlobalDataStorage);
 
 	// State to store the products to display
 	const [products, setProducts] = useState([]);
@@ -30,7 +29,10 @@ export default function ProductsComponent() {
 		fetch(`http://localhost/outdoor-gear-final-project%20(php)/php/load.php/loadProducts?cid=${categoryId}`)
 			.then(response => response.json())
 			.then(data => {
-				setProducts(data);
+				setProducts(data.map((dat) => ({
+					...dat,
+					key: JSON.stringify(dat),
+				})))
 				console.log(data);
 			})
 			.catch(error => {
@@ -58,6 +60,8 @@ export default function ProductsComponent() {
 		settingProducts(newCategory);
 	};
 
+	console.log(products);
+
 	return (
 		<div className="d-flex flex-column justify-content-start align-items-center gap-3 p-4">
 			<div className="d-flex justify-content-between w-75">
@@ -78,7 +82,7 @@ export default function ProductsComponent() {
 				</select>
 			</div>
 			<div className="d-flex flex-wrap justify-content-center gap-3">
-				{products?.length > 0 && products.map((product) => <ProductCard key={product.pid} product={product} />)}
+				{products?.length > 0 && products.map((product) => <ProductCard key={product.key} product={product} />)}
 			</div>
 		</div>
 	);

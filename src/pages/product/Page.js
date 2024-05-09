@@ -31,7 +31,7 @@ export function ProductPage() {
 
 		if (hasProduct) {
 			setProduct(hasProduct);
-			return;
+
 		}
 
 		navigate('../');

@@ -30,6 +30,7 @@ export default {
 		cart: 'Cart',
 		login: 'Login',
 		logout: 'Logout',
+		register: 'Register',
 	},
 	product_card: {
 		add_to_cart: 'Add to Cart',

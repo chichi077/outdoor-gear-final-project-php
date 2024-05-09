@@ -35,6 +35,8 @@
 				"min": 2,
 				"exceptions": ["_", "t", "x", "y", "z"]
 			}
-		]
+		],
+		"promise/prefer-await-to-then":  "off",
+		"promise/prefer-await-to-callbacks": "off"
 	}
 }

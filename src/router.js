@@ -74,7 +74,7 @@ export const router = createBrowserRouter([
 			// 	</LayoutWrapper>
 			// </AdminGuard >
 
-			<LayoutWrapper titleKey="pages.register">
+			<LayoutWrapper titleKey="Product Registration Form">
 			 		<ProductRegisterPage />
 			</LayoutWrapper>
 		),

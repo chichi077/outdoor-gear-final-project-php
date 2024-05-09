@@ -88,30 +88,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
         }
 
         function authenticate($pass){
-            $dbObj = new DB(DB_SERVER_NAME,DB_USER_NAME,DB_PASSWORD,DB_NAME);
-            $dbCon=$dbObj->connect();
-            $selectCom = "SELECT * FROM user_tb WHERE email='".$this->email."'";
-            // $result = $dbCon->query($selectCmd); // 找不到selectCmd
-            $result = $dbCon->query($selectCom); // execute the sql statement
-            $attempt=null;
-            if ($result->num_rows > 0){
-
-                $row = $result->fetch_assoc(); // fetch the result as an associative array ["fna,e"=> "Natalia",
-                // "lname"=>"something",...];
-                $attempt = $row['attempt'];
-                if($row['attempt']==0){
+            $dbObj  =new DB(DB_SERVER_NAME, DB_USER_NAME, DB_PASSWORD, DB_NAME);
+            $dbCon = $dbObj->connect(); //conect to database
+            $selectCmd = "SELECT * FROM user_tb WHERE email='".$this->email."'";
+            $result = $dbCon->query($selectCmd);
+            $attempt = null;
+            if($result->num_rows > 0){ 
+                $row = $result->fetch_assoc();
+                // switch($row["user_type"]){
+                //     case 1:
+                //         $user_typeDB = "staff";
+                //     break;
+                //     case 2:
+                //         $user_typeDB = "customer";
+                //     break;
+                //     case 3:
+                //         $user_typeDB ="admin";
+                //     break;
+                //     default:
+                //         throw new Exception("Some trouble about user_type on DataBase");
+                // }
+                $attempt = $row["attempt"];
+                if($row["attempt"] == 0) {
                     Audit_generator("login","failed","User account locked.",$this->email);
                     throw new Exception("There is a problem logging in, please contact the system admin.",401);
                 }
-                if(password_verify($pass,$row['pass'])){
+
+                if($pass == $row["password"]){
                     $loginFlag = true;
-                    $attempt =5;
-                    $this->first_name = $row['first_name'];
-                    $this->last_name = $row['last_name'];
-                    $this->isAdmin = $row['isAdmin'];
-                    $this->user_type = $row['user_type'];
-                    $this->attempt = $attempt;
-                    $this->uid = $row['uid'];
+                    $attempt = 5;
+                    $this->fname = $row["fname"];
+                    $this->lname = $row["lname"];
+                    // $this->user_type = $user_typeDB;    //$this->user_type is already converted to lowercase
+                    // $this->id = $row["uid"];
                     session_start();
                     $_SESSION["login_user"] = $this;
                     $_SESSION["time_out"] = time() + TIME_OUT;
@@ -119,57 +128,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
                 }else{
                     $attempt -= 1;
                     $loginFlag = "pass";
-                    //刪除
-                    // Audit_generator("login","failed","Invalid password.",$this->email);
-                    // throw new Exception("Username/Password Wrong.",401);
                 }
-       
-               //UPDATE [table_name] SET [column_name] = new_value, [col2_name] =new_value2 WHERE condition
-               $updateCmd = "UPDATE user_tb SET attempt = $attempt WHERE id = ".$row['uid'];
-               $dbCon->query($updateCmd);
-               $dbObj->db_close();
-
-            }else{
+                // to update  "UPDATE [table name] SET [col_name] = new_value, WHERE condition"
+                $updateCmd = "UPDATE user_tb SET attempt = $attempt WHERE uid=".$row["uid"];
+                $dbCon ->query($updateCmd);
+                $dbObj->db_close();
+            }else {
                 $loginFlag = "email";
             }
-            if($loginFlag!==true){
-                switch($loginFlag){
+
+            if($loginFlag!==true) {
+                switch($loginFlag){ //if failed to login 
                     case "email":
                         Audit_generator("login","failed","Invalid email address.",$this->email);
                         throw new Exception("Username/Password Wrong.",401);
-                        break;
                     case "pass":
-                        Audit_generator("login","failed","Invalid password. Attempts(".$attempt.")",$this->email);
+                        echo $pass."-------";
+                        echo $row["password"]."-------";
+                        Audit_generator("login","failed","Invalid password. Attempts(".$attempt.")",$attempt);
                         throw new Exception("Username/Password Wrong.",401);
-                    break;
                 } 
             }
-              
             return session_id();
-                                        // foreach($prevUsers as $user){
-                                        //     if($user->email == $this->email){
-                                        //         if($user->attempt == 0) {
-                                        //         Audit_generator("login","failed","User account locked.",$this->email);
-                                        //         throw new Exception("There is a problem logging in, please contact the system admin.",401);
-                                        //         }
-                                        //         if(password_verify($pass,$user->pass)){
-                                        //             $loginFlag = NULL;
-                                        //             $attempt = 5;
-                                        //             $this->fname = $user->fname;
-                                        //             $this->lname = $user->lname;
-                                        //             $this->userID = $user->userID;
-                                        //             session_start();
-                                        //             $_SESSION["login_user"] = $this;
-                                        //             $_SESSION["time_out"] = time() + TIME_OUT;
-                                        //             Audit_generator("login","success","User login via password.",$this->email);
-                                        //         }else{
-                                                
-                                        //         }
-                                            
-                                                
-                                        //     }
-                                        // }
-        
         }
 
 

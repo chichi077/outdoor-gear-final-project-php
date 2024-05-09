@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 export function ProductRegisterPage() {
 
-    const navigate = useNavigate();
     const [options, setOptions] = useState([]);
 
 
@@ -24,8 +23,10 @@ export function ProductRegisterPage() {
                     //     });
                     // } else {
                     // }
-
-                    window.location.href = '/products';
+                    if (window.confirm("User registered successfully!")) {
+                        window.location.href = '/login';
+                    }
+                   
                 }
             })
             .catch((error) => {

@@ -1,0 +1,12 @@
+[
+	{ "cid": "1", "cname": "tents" },
+	{ "cid": "2", "cname": "backpacks" },
+	{ "cid": "3", "cname": "camping chairs" },
+	{ "cid": "4", "cname": "camping tables" },
+	{ "cid": "5", "cname": "other" },
+	{ "cid": "6", "cname": "tools" },
+	{ "cid": "7", "cname": "portable lights" },
+	{ "cid": "8", "cname": "kits" },
+	{ "cid": "9", "cname": "footwear" },
+	{ "cid": "10", "cname": "stoves" }
+]

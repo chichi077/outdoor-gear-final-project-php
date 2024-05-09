@@ -1,0 +1,5 @@
+2024-05-10 00:16:36 ::1:56720 user2@mail.com registeration success User registered. 
+2024-05-10 00:16:58 ::1:56755 user2@mail.com login success User login via password. 
+2024-05-10 00:19:41 ::1:56962 user1@mail.com login failed Invalid email address. 
+2024-05-10 00:20:13 ::1:57028 user2@mail.com login success User login via password. 
+2024-05-10 00:24:53 ::1:57414 user2@mail.com login success User login via password. 

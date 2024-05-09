@@ -136,7 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
                         throw new Exception("Email/Password Wrong.",401);
                 } 
             }
-            $loginResult = json_encode(['sessionId' => session_id(), 'isAdmin' => $this->isAdmin]);
+            $loginResult = json_encode(['sessionId' => session_id(), 'isAdmin' => (bool)$this->isAdmin]);
             return $loginResult;
         }
 
